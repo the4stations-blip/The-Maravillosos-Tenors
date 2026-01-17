@@ -1,5 +1,5 @@
 
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode, useEffect } from 'react';
 
 type Language = 'es' | 'en';
 
@@ -183,7 +183,12 @@ const translations = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [lang, setLang] = useState<Language>('es');
+  // Inicialización basada en el idioma del navegador. 
+  // Si es inglés (en, en-US, en-GB, etc), se establece 'en'. De lo contrario 'es'.
+  const [lang, setLang] = useState<Language>(() => {
+    const browserLang = navigator.language.toLowerCase();
+    return browserLang.startsWith('en') ? 'en' : 'es';
+  });
 
   const t = (path: string) => {
     return path.split('.').reduce((obj: any, key) => obj?.[key], translations[lang]);

@@ -33,42 +33,42 @@ const Tenors: React.FC = () => {
   ];
 
   return (
-    <section className="relative min-h-screen w-full bg-dark overflow-hidden flex flex-col pt-32 pb-32" id="tenors">
-      <div className="max-w-[1800px] mx-auto w-full px-8 lg:px-12 flex flex-col h-full z-10">
-        <div className="flex justify-between items-end mb-24 border-b border-white/5 pb-8">
-          <h2 className="font-serif text-6xl md:text-8xl text-white leading-[0.9]">{t('tenors.title')}</h2>
-          <div className="text-right hidden md:block">
+    <section className="relative min-h-[80vh] w-full bg-dark overflow-hidden flex flex-col py-20 md:py-32" id="tenors">
+      <div className="max-w-[1800px] mx-auto w-full px-4 md:px-8 lg:px-12 flex flex-col h-full z-10">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-12 md:mb-24 border-b border-white/5 pb-8 gap-6">
+          <h2 className="font-serif text-5xl md:text-8xl text-white leading-[0.9]">{t('tenors.title')}</h2>
+          <div className="text-right">
             <span className="text-[10px] tracking-[0.3em] uppercase text-text-muted block">{t('tenors.tagline')}</span>
-            <div className="w-full h-[2px] bg-white/10 mt-4 relative overflow-hidden rounded-full">
+            <div className="w-full md:w-32 h-[1px] bg-white/10 mt-4 relative overflow-hidden rounded-full mx-auto md:ml-auto md:mr-0">
               <div className="absolute left-0 top-0 h-full w-1/4 bg-neon"></div>
             </div>
           </div>
         </div>
 
-        <div className="group/container gallery-scroll flex overflow-x-auto snap-x snap-mandatory pb-12 gap-8 md:gap-16 w-full">
+        <div className="group/container gallery-scroll flex overflow-x-auto snap-x snap-mandatory pb-4 md:pb-12 gap-6 md:gap-16 w-full -mx-4 px-4 md:mx-0 md:px-0">
           {artistData.map((artist, idx) => (
             <div 
               key={idx}
-              className="snap-center shrink-0 w-[85vw] md:w-[450px] h-[650px] relative overflow-hidden group rounded-lg bg-dark-surface border border-white/5 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] hover:scale-[1.02] group-hover/container:opacity-40 hover:!opacity-100 group-hover/container:grayscale hover:!grayscale-0 z-0 hover:z-10"
+              className="snap-center shrink-0 w-[80vw] sm:w-[350px] md:w-[450px] h-[550px] md:h-[650px] relative overflow-hidden group rounded-lg bg-dark-surface border border-white/5 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] md:hover:scale-[1.02] lg:group-hover/container:opacity-40 lg:hover:!opacity-100 lg:group-hover/container:grayscale lg:hover:!grayscale-0 z-0 lg:hover:z-10"
             >
               <div className="absolute inset-0 z-0 bg-dark-surface">
                 <img 
                   alt={artist.name} 
-                  className="w-full h-full object-cover transition-all duration-1000 ease-out hover:scale-105" 
+                  className="w-full h-full object-cover transition-all duration-1000 ease-out md:group-hover:scale-105" 
                   src={artist.image}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-90 group-hover:opacity-80 transition-opacity duration-700"></div>
-                <div className="absolute inset-0 noise-bg opacity-20 mix-blend-overlay"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-90 transition-opacity duration-700"></div>
+                <div className="absolute inset-0 noise-bg opacity-10 mix-blend-overlay"></div>
               </div>
-              <div className="absolute inset-0 z-10 flex flex-col justify-end p-8 lg:p-10 pointer-events-none">
-                <div className="pointer-events-auto transform translate-y-4 group-hover:translate-y-0 transition-transform duration-700">
-                  <div className="flex items-center gap-4 mb-4">
-                    <span className="text-neon text-[10px] tracking-[0.2em] uppercase font-bold">{artist.voice}</span>
-                    <div className="h-[1px] w-8 bg-neon/50"></div>
+              <div className="absolute inset-0 z-10 flex flex-col justify-end p-6 md:p-10 pointer-events-none">
+                <div className="pointer-events-auto transform transition-transform duration-700">
+                  <div className="flex items-center gap-4 mb-3 md:mb-4">
+                    <span className="text-neon text-[8px] md:text-[10px] tracking-[0.2em] uppercase font-bold">{artist.voice}</span>
+                    <div className="h-[1px] w-6 md:w-8 bg-neon/50"></div>
                   </div>
-                  <h3 className="font-serif text-5xl text-white tracking-tight mb-4 group-hover:mb-6 transition-all duration-500">{artist.name}</h3>
-                  <div className="h-0 group-hover:h-auto overflow-hidden opacity-0 group-hover:opacity-100 transition-all duration-700 delay-100">
-                    <p className="text-text-muted font-display text-sm leading-relaxed border-l border-neon/30 pl-4 mb-6">
+                  <h3 className="font-serif text-3xl md:text-5xl text-white tracking-tight mb-4 group-hover:mb-6 transition-all duration-500">{artist.name}</h3>
+                  <div className="h-0 md:group-hover:h-auto overflow-hidden opacity-0 md:group-hover:opacity-100 transition-all duration-700 delay-100">
+                    <p className="text-text-muted font-display text-xs md:text-sm leading-relaxed border-l border-neon/30 pl-4 mb-6">
                       {artist.bio}
                     </p>
                     <button className="text-[10px] tracking-[0.2em] uppercase text-white hover:text-neon transition-colors flex items-center gap-2 group/btn">

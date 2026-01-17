@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { useLanguage } from './LanguageContext';
+import { motion, AnimatePresence } from 'framer-motion';
 
 type TabId = 'sinfonico' | 'una-noche' | 'pasion-latina' | 'navidad';
 
@@ -58,65 +59,77 @@ const Shows: React.FC = () => {
   const activeContent = getActiveContent(activeTab);
 
   return (
-    <section className="bg-dark-surface py-32 relative overflow-hidden border-t border-white/5" id="shows">
-      <div className="max-w-[1600px] mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-end justify-between mb-16 border-b border-white/5 pb-8">
-          <h2 className="font-serif text-5xl md:text-7xl text-white leading-[0.9]">
+    <section className="bg-dark-surface py-20 md:py-32 relative overflow-hidden border-t border-white/5" id="shows">
+      <div className="max-w-[1600px] mx-auto px-4 md:px-8">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-8 md:mb-16 border-b border-white/5 pb-6 md:pb-8">
+          <h2 className="font-serif text-4xl md:text-7xl text-white leading-[0.9] mb-4 md:mb-0">
             {t('shows.title')} <span className="text-neon italic">{t('shows.titleAccent')}</span>
           </h2>
-          <div className="text-right hidden md:block">
-            <p className="text-text-muted text-sm tracking-wide uppercase">{t('shows.select')}</p>
+          <div className="text-right">
+            <p className="text-text-muted text-[10px] md:text-sm tracking-wide uppercase">{t('shows.select')}</p>
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-8 md:gap-16 mb-16 border-b border-white/5 pb-2">
+        <div className="flex overflow-x-auto gallery-scroll gap-6 md:gap-16 mb-8 md:mb-16 border-b border-white/5 pb-2 -mx-4 px-4 md:mx-0 md:px-0 scroll-smooth">
           {tabs.map(id => (
             <button 
               key={id}
-              className={`pb-4 relative group text-sm md:text-base tracking-widest uppercase font-bold transition-colors ${activeTab === id ? 'text-white' : 'text-text-muted hover:text-white'}`}
+              className={`pb-4 relative shrink-0 text-xs md:text-base tracking-widest uppercase font-bold transition-colors ${activeTab === id ? 'text-white' : 'text-text-muted hover:text-white'}`}
               onClick={() => setActiveTab(id)}
             >
               {getActiveContent(id).label}
-              <span className={`absolute bottom-[-9px] left-0 h-[2px] bg-neon transition-all duration-300 ${activeTab === id ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
+              <span className={`absolute bottom-[-9px] left-0 h-[2px] bg-neon transition-all duration-300 ${activeTab === id ? 'w-full' : 'w-0'}`}></span>
             </button>
           ))}
         </div>
 
-        <div className="relative min-h-[600px]">
-          <div key={activeTab} className="flex flex-col md:flex-row gap-12 md:gap-24 items-center animate-fade-in-slide">
-            <div className="w-full md:w-[60%] h-[400px] md:h-[600px] relative rounded-lg overflow-hidden group">
-              <div 
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" 
-                style={{ backgroundImage: `url('${activeContent.image}')` }}
-              ></div>
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
-              <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-20">
-                <span className="inline-block px-3 py-1 bg-neon/80 backdrop-blur-md text-white text-[10px] font-bold tracking-widest uppercase mb-2">
-                  {activeContent.tag}
-                </span>
+        <div className="relative min-h-[500px] md:min-h-[600px]">
+          <AnimatePresence mode="wait">
+            <motion.div 
+              key={activeTab} 
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ 
+                duration: 0.5, 
+                ease: [0.22, 1, 0.36, 1] 
+              }}
+              className="flex flex-col lg:flex-row gap-8 lg:gap-24 items-start"
+            >
+              <div className="w-full lg:w-[60%] h-[300px] md:h-[500px] lg:h-[600px] relative rounded-lg overflow-hidden group">
+                <div 
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" 
+                  style={{ backgroundImage: `url('${activeContent.image}')` }}
+                ></div>
+                <div className="absolute inset-0 bg-black/20"></div>
+                <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-20">
+                  <span className="inline-block px-3 py-1 bg-neon/80 backdrop-blur-md text-white text-[10px] font-bold tracking-widest uppercase mb-2">
+                    {activeContent.tag}
+                  </span>
+                </div>
               </div>
-            </div>
-            <div className="w-full md:w-[40%] flex flex-col justify-center">
-              <h3 className="font-serif text-4xl md:text-5xl text-white mb-6 leading-tight">
-                {activeContent.title} <span className="italic text-neon">{activeContent.subtitle}</span>
-              </h3>
-              <div className="w-12 h-[1px] bg-neon mb-8"></div>
-              <p className="text-text-muted leading-relaxed mb-8 font-light text-lg">
-                {activeContent.desc}
-              </p>
-              <ul className="space-y-4 mb-10 text-sm text-white/80 tracking-wide">
-                {activeContent.features.map((f: string, i: number) => (
-                  <li key={i} className="flex items-center gap-3">
-                    <span className="material-symbols-outlined text-neon text-lg">check_circle</span>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <a className="inline-flex items-center gap-2 text-neon uppercase tracking-widest text-xs font-bold hover:text-white transition-colors group" href="#">
-                {activeContent.cta} <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </a>
-            </div>
-          </div>
+              <div className="w-full lg:w-[40%] flex flex-col justify-center pt-4">
+                <h3 className="font-serif text-3xl md:text-5xl text-white mb-4 md:mb-6 leading-tight">
+                  {activeContent.title} <span className="italic text-neon">{activeContent.subtitle}</span>
+                </h3>
+                <div className="w-12 h-[1px] bg-neon mb-6 md:mb-8"></div>
+                <p className="text-text-muted leading-relaxed mb-6 md:mb-8 font-light text-base md:text-lg">
+                  {activeContent.desc}
+                </p>
+                <ul className="space-y-3 md:space-y-4 mb-8 md:mb-10 text-xs md:text-sm text-white/80 tracking-wide">
+                  {activeContent.features.map((f: string, i: number) => (
+                    <li key={i} className="flex items-center gap-3">
+                      <span className="material-symbols-outlined text-neon text-lg">check_circle</span>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <a className="inline-flex items-center gap-2 text-neon uppercase tracking-widest text-[10px] md:text-xs font-bold hover:text-white transition-colors group" href="#">
+                  {activeContent.cta} <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                </a>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
     </section>
