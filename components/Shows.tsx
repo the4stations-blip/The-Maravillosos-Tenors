@@ -8,6 +8,7 @@ type TabId = 'sinfonico' | 'una-noche' | 'pasion-latina' | 'navidad';
 const Shows: React.FC = () => {
   const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState<TabId>('sinfonico');
+  const [isShared, setIsShared] = useState(false);
 
   const tabs: TabId[] = ['sinfonico', 'una-noche', 'pasion-latina', 'navidad'];
 
@@ -21,7 +22,8 @@ const Shows: React.FC = () => {
         desc: t('shows.sinfonico.desc'),
         features: t('shows.sinfonico.features'),
         cta: t('shows.sinfonico.cta'),
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDr_Zw8ybUk7StU43bmWkcCrlVktL2wxUSK6sA-mhlYhmHvVDJ3ptz_VnKPvRszXQxh_PoY0dfvsEDhPf0QAKirUTisgw1yQsVt5Nd7OdZUvbJVBtDrhs_rlOQgCph0A5d5RrhyBNbxCEXloBBYKRmMcnQh5HvNDMWJPQt_kmtLoM0fYUqiXPIQEMgN6McjrZc7JStZIrpOwexC6zC7SOFH4JFW2CO1siaSvPRHH1Awq0bXEHojYea6xNL4ouZx0pNngxFV7p3YwyW2'
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDr_Zw8ybUk7StU43bmWkcCrlVktL2wxUSK6sA-mhlYhmHvVDJ3ptz_VnKPvRszXQxh_PoY0dfvsEDhPf0QAKirUTisgw1yQsVt5Nd7OdZUvbJVBtDrhs_rlOQgCph0A5d5RrhyBNbxCEXloBBYKRmMcnQh5HvNDMWJPQt_kmtLoM0fYUqiXPIQEMgN6McjrZc7JStZIrpOwexC6zC7SOFH4JFW2CO1siaSvPRHH1Awq0bXEHojYea6xNL4ouZx0pNngxFV7p3YwyW2',
+        videoEmbedId: 'irF2lHkQAAM' // ID corregido del video de Il Volo
       };
       case 'una-noche': return {
         label: t('shows.unaNoche.label'),
@@ -53,6 +55,47 @@ const Shows: React.FC = () => {
         cta: t('shows.navidad.cta'),
         image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAXHv0zHRe78z-0NPtJC-OVIO9vQhzlbeQV4Gqi4b250uYQ89-yhW77UWRomdDWYdwIASTNPYrGl3SsxlerPnV-YyNOYwRrLjVWnsoQM_3lVnDze5f8T9wFhIdQjPpTeGdUqkble6bJsQuYs8Yi5lcyjC3LWwy26dCI2aFvt8gmH8shCRzEhYyWuIBaz91xUvZls-dgxgGeF7u8GPn5oHSeKFZjI-YsgdU5YHyTQcouHHbrMyNcCHa7YTdc0QNDfR2U22mJr11urGqn'
       };
+    }
+  };
+
+  const handleShare = async (content: any) => {
+    const shareData = {
+      title: `The Maravillosos Tenors - ${content.title} ${content.subtitle}`,
+      text: `${content.tag}: ${content.desc}`,
+      url: window.location.href,
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+        setIsShared(true);
+        setTimeout(() => setIsShared(false), 2000);
+      } catch (err) {
+        console.log('Error sharing:', err);
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(`${shareData.title}\n${shareData.text}\n${shareData.url}`);
+        setIsShared(true);
+        setTimeout(() => setIsShared(false), 2000);
+      } catch (err) {
+        console.log('Clipboard error:', err);
+      }
+    }
+  };
+
+  const handleCTAClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const element = document.getElementById('contact');
+    if (element) {
+      const offset = 100;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
     }
   };
 
@@ -96,18 +139,33 @@ const Shows: React.FC = () => {
               }}
               className="flex flex-col lg:flex-row gap-8 lg:gap-24 items-start"
             >
-              <div className="w-full lg:w-[60%] h-[300px] md:h-[500px] lg:h-[600px] relative rounded-lg overflow-hidden group">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" 
-                  style={{ backgroundImage: `url('${activeContent.image}')` }}
-                ></div>
-                <div className="absolute inset-0 bg-black/20"></div>
-                <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-20">
-                  <span className="inline-block px-3 py-1 bg-neon/80 backdrop-blur-md text-white text-[10px] font-bold tracking-widest uppercase mb-2">
+              <div className="w-full lg:w-[60%] h-[300px] md:h-[500px] lg:h-[600px] relative rounded-lg overflow-hidden group shadow-2xl bg-black">
+                {activeContent.videoEmbedId ? (
+                  <iframe 
+                    className="absolute inset-0 w-full h-full"
+                    src={`https://www.youtube.com/embed/${activeContent.videoEmbedId}?rel=0&modestbranding=1`}
+                    title={activeContent.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                ) : (
+                  <>
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" 
+                      style={{ backgroundImage: `url('${activeContent.image}')` }}
+                    ></div>
+                    <div className="absolute inset-0 bg-black/20"></div>
+                  </>
+                )}
+                
+                <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-20 pointer-events-none">
+                  <span className="inline-block px-3 py-1 bg-neon/80 backdrop-blur-md text-white text-[10px] font-bold tracking-widest uppercase mb-2 shadow-lg">
                     {activeContent.tag}
                   </span>
                 </div>
               </div>
+              
               <div className="w-full lg:w-[40%] flex flex-col justify-center pt-4">
                 <h3 className="font-serif text-3xl md:text-5xl text-white mb-4 md:mb-6 leading-tight">
                   {activeContent.title} <span className="italic text-neon">{activeContent.subtitle}</span>
@@ -124,9 +182,60 @@ const Shows: React.FC = () => {
                     </li>
                   ))}
                 </ul>
-                <a className="inline-flex items-center gap-2 text-neon uppercase tracking-widest text-[10px] md:text-xs font-bold hover:text-white transition-colors group" href="#">
-                  {activeContent.cta} <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                </a>
+                
+                <div className="flex flex-wrap items-center gap-6 md:gap-10">
+                  <a 
+                    className="inline-flex items-center gap-2 text-neon uppercase tracking-widest text-[10px] md:text-xs font-bold hover:text-white transition-colors group" 
+                    href="#contact"
+                    onClick={handleCTAClick}
+                  >
+                    {activeContent.cta} <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                  </a>
+                  
+                  <button 
+                    onClick={() => handleShare(activeContent)}
+                    className="inline-flex items-center gap-3 text-white/40 hover:text-white uppercase tracking-widest text-[10px] md:text-xs font-bold transition-all group min-w-[120px]"
+                  >
+                    <motion.span 
+                      animate={isShared ? { 
+                        scale: [1, 1.3, 1],
+                        color: ['#8A92A3', '#4B5CA0', '#4B5CA0'],
+                        textShadow: ['0 0 0px rgba(75,92,160,0)', '0 0 10px rgba(75,92,160,0.8)', '0 0 5px rgba(75,92,160,0.5)']
+                      } : { scale: 1, color: 'inherit' }}
+                      className="material-symbols-outlined text-base transition-colors group-hover:scale-110"
+                    >
+                      {isShared ? 'check_circle' : 'share'}
+                    </motion.span>
+                    
+                    <div className="relative overflow-hidden h-4 flex items-center">
+                      <AnimatePresence mode="wait">
+                        {isShared ? (
+                          <motion.span
+                            key="shared"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.3 }}
+                            className="text-neon block"
+                          >
+                            {t('shows.shared')}
+                          </motion.span>
+                        ) : (
+                          <motion.span
+                            key="share"
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.3 }}
+                            className="block"
+                          >
+                            {t('shows.share')}
+                          </motion.span>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  </button>
+                </div>
               </div>
             </motion.div>
           </AnimatePresence>

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { useLanguage } from './LanguageContext';
+import { motion } from 'framer-motion';
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();
@@ -49,12 +50,36 @@ const Contact: React.FC = () => {
           <p className="text-text-muted mb-12 max-w-md mx-auto leading-relaxed">
             {t('contact.desc')}
           </p>
+          
           <div className="group relative inline-block mb-16">
-            <a className="block font-serif text-3xl md:text-5xl text-white/90 hover:text-white transition-colors pb-2 border-b border-white/20 hover:border-neon" href="mailto:booking@maravillosos.com">
-              booking@maravillosos.com
-            </a>
-            <div className="absolute -bottom-8 left-0 w-full text-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <span className="text-neon text-[10px] uppercase tracking-[0.3em]">{t('contact.copy')}</span>
+            <motion.a 
+              href="mailto:booking@maravillosos.com"
+              className="relative block font-serif text-2xl sm:text-3xl md:text-5xl text-white/90 transition-colors duration-500 hover:text-white"
+              whileHover="hover"
+            >
+              <motion.span
+                variants={{
+                  hover: { y: -5, textShadow: "0 0 20px rgba(75, 92, 160, 0.8)" }
+                }}
+                className="inline-block"
+              >
+                booking@maravillosos.com
+              </motion.span>
+              
+              <motion.div
+                className="absolute -bottom-2 left-0 h-[1px] bg-neon"
+                initial={{ width: 0 }}
+                variants={{
+                  hover: { width: '100%' }
+                }}
+                transition={{ duration: 0.4, ease: "circOut" }}
+              />
+            </motion.a>
+            
+            <div className="absolute -bottom-10 left-0 w-full text-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
+              <span className="text-neon text-[10px] uppercase tracking-[0.4em] font-bold">
+                {t('contact.copy')}
+              </span>
             </div>
           </div>
           

@@ -1,11 +1,26 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLanguage } from './LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar: React.FC = () => {
   const { lang, setLang, t } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Track scroll position to toggle glass effect
+  useEffect(() => {
+    const handleScrollEvent = () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScrollEvent);
+    return () => window.removeEventListener('scroll', handleScrollEvent);
+  }, []);
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
@@ -32,30 +47,68 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-[60] px-4 md:px-8 py-4 md:py-6 transition-all duration-300 mix-blend-difference text-white">
+      <nav 
+        className={`fixed top-0 left-0 right-0 z-[60] px-4 md:px-8 py-3 md:py-4 transition-all duration-500 ease-in-out ${
+          isScrolled 
+            ? 'bg-dark/80 backdrop-blur-xl border-b border-white/5 shadow-2xl' 
+            : 'bg-transparent border-b border-transparent'
+        } text-white`}
+      >
         <div className="max-w-[1600px] mx-auto flex items-center justify-between">
-          <a 
-            className="flex items-center gap-3 group" 
+          <motion.a 
+            className="flex items-center gap-3 group cursor-pointer" 
             href="#"
             onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+            whileHover="hover"
           >
-            <span className="material-symbols-outlined text-2xl md:text-3xl group-hover:text-neon transition-colors">graphic_eq</span>
-            <span className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase">The Maravillosos Tenors</span>
-          </a>
+            <motion.span 
+              variants={{
+                hover: { scale: 1.1, rotate: [0, -10, 10, 0], transition: { duration: 0.5 } }
+              }}
+              className="material-symbols-outlined text-2xl md:text-3xl text-white group-hover:text-neon transition-colors"
+            >
+              graphic_eq
+            </motion.span>
+            <motion.span 
+              variants={{
+                hover: { tracking: '0.25em', opacity: 1 }
+              }}
+              className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-500 opacity-90"
+            >
+              The Maravillosos Tenors
+            </motion.span>
+          </motion.a>
 
           <div className="flex items-center gap-4 md:gap-12">
             {/* Desktop Links */}
             <div className="hidden lg:flex items-center gap-10">
               <div className="flex gap-8 text-[10px] font-bold tracking-[0.2em] uppercase">
                 {navLinks.map(link => (
-                  <a 
+                  <motion.a 
                     key={link.id}
-                    className="hover:text-neon transition-colors" 
+                    className="relative py-2 hover:text-neon transition-colors duration-300" 
                     href={`#${link.id}`}
                     onClick={(e) => handleScroll(e, link.id)}
+                    whileHover="hover"
+                    initial="initial"
                   >
-                    {link.label}
-                  </a>
+                    <motion.span
+                      variants={{
+                        hover: { y: -2 }
+                      }}
+                      className="inline-block transition-transform duration-300"
+                    >
+                      {link.label}
+                    </motion.span>
+                    <motion.div
+                      variants={{
+                        initial: { width: 0, opacity: 0 },
+                        hover: { width: '100%', opacity: 1 }
+                      }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                      className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[1px] bg-neon shadow-[0_0_8px_rgba(75,92,160,0.8)]"
+                    />
+                  </motion.a>
                 ))}
               </div>
               <div className="h-4 w-px bg-white/20"></div>
@@ -80,7 +133,7 @@ const Navbar: React.FC = () => {
 
             {/* Mobile Menu Toggle */}
             <button 
-              className="lg:hidden flex items-center justify-center size-10 rounded-full bg-white/5 border border-white/10"
+              className="lg:hidden flex items-center justify-center size-10 rounded-full bg-white/5 border border-white/10 transition-transform active:scale-90"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               <span className="material-symbols-outlined text-2xl">

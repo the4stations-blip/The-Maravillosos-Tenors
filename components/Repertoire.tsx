@@ -78,7 +78,8 @@ const Repertoire: React.FC = () => {
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 md:group-hover:scale-105" 
                 style={{ backgroundImage: `url('${item.image}')` }}
               ></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-90 transition-all duration-500"></div>
+              {/* Enhanced bottom gradient for better text legibility */}
+              <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-100 transition-all duration-500"></div>
               
               {item.icon && (
                 <div className="absolute top-4 right-4 z-20">
@@ -86,27 +87,28 @@ const Repertoire: React.FC = () => {
                 </div>
               )}
 
-              <div className="absolute bottom-0 left-0 w-full p-6 md:p-10 z-20">
-                <div className="flex flex-col gap-1">
+              <div className="absolute bottom-0 left-0 w-full p-6 md:p-8 z-20">
+                <div className="flex flex-col">
                   {item.isLive && (
-                    <div className="flex items-center gap-3 mb-2 md:mb-3">
-                      <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse"></div>
-                      <span className="text-neon text-[8px] md:text-[10px] font-bold tracking-widest uppercase">{item.tag}</span>
+                    <div className="flex items-center gap-2 mb-3 md:mb-4">
+                      <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse shadow-[0_0_8px_rgba(220,38,38,0.8)]"></div>
+                      <span className="text-neon text-[9px] md:text-[11px] font-bold tracking-[0.2em] uppercase">{item.tag}</span>
                     </div>
                   )}
                   {!item.isLive && item.tag && (
-                    <span className={`inline-block w-fit px-2 py-1 ${item.large ? 'bg-white/10 backdrop-blur-md border border-white/10 mb-3' : 'text-neon'} text-[8px] md:text-[10px] font-bold tracking-widest uppercase`}>
+                    <span className={`inline-block w-fit px-2 py-1 ${item.large ? 'bg-white/10 backdrop-blur-md border border-white/10 mb-4' : 'text-neon mb-2'} text-[9px] md:text-[10px] font-bold tracking-widest uppercase`}>
                       {item.tag}
                     </span>
                   )}
-                  <h3 className={`font-serif ${item.large ? 'text-2xl md:text-4xl' : 'text-xl md:text-3xl'} text-white leading-tight`}>
+                  <h3 className={`font-serif ${item.large ? 'text-2xl md:text-4xl' : 'text-xl md:text-3xl'} text-white leading-tight engraved-text`}>
                     {item.title}
                   </h3>
-                  {item.sub && <p className="text-text-muted text-xs md:text-sm mt-2">{item.sub}</p>}
+                  {item.sub && <p className="text-text-muted text-xs md:text-sm mt-3 opacity-80">{item.sub}</p>}
                 </div>
               </div>
               
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-14 md:size-16 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center opacity-0 md:group-hover:opacity-100 transform scale-90 md:group-hover:scale-100 transition-all duration-300">
+              {/* Play button shifted slightly up to avoid collision with bottom text on smaller heights */}
+              <div className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 size-14 md:size-16 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center opacity-0 md:group-hover:opacity-100 transform scale-90 md:group-hover:scale-100 transition-all duration-300 shadow-2xl">
                 <span className="material-symbols-outlined text-white text-2xl md:text-3xl">play_arrow</span>
               </div>
             </div>

@@ -23,7 +23,7 @@ const translations = {
       titleBottom: "Elegancia"
     },
     marquee: {
-      soldOut: "AGOTADO"
+      // Keys for marquee are now mostly static or years
     },
     repertoire: {
       title: "Sinfonía",
@@ -37,6 +37,8 @@ const translations = {
       title: "Nuestros",
       titleAccent: "Shows",
       select: "Selecciona una experiencia",
+      share: "Compartir",
+      shared: "¡Copiado!",
       sinfonico: {
         label: "Sinfónico",
         title: "Gran",
@@ -107,7 +109,7 @@ const translations = {
       titleBottom: "Elegance"
     },
     marquee: {
-      soldOut: "SOLD OUT"
+      // Keys for marquee are now mostly static or years
     },
     repertoire: {
       title: "Visual",
@@ -121,6 +123,8 @@ const translations = {
       title: "Our",
       titleAccent: "Shows",
       select: "Select an experience",
+      share: "Share",
+      shared: "Copied!",
       sinfonico: {
         label: "Sinfónico",
         title: "Grand",
@@ -183,8 +187,6 @@ const translations = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  // Inicialización basada en el idioma del navegador. 
-  // Si es inglés (en, en-US, en-GB, etc), se establece 'en'. De lo contrario 'es'.
   const [lang, setLang] = useState<Language>(() => {
     const browserLang = navigator.language.toLowerCase();
     return browserLang.startsWith('en') ? 'en' : 'es';
