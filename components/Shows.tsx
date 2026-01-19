@@ -23,7 +23,7 @@ const Shows: React.FC = () => {
         features: t('shows.sinfonico.features'),
         cta: t('shows.sinfonico.cta'),
         image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDr_Zw8ybUk7StU43bmWkcCrlVktL2wxUSK6sA-mhlYhmHvVDJ3ptz_VnKPvRszXQxh_PoY0dfvsEDhPf0QAKirUTisgw1yQsVt5Nd7OdZUvbJVBtDrhs_rlOQgCph0A5d5RrhyBNbxCEXloBBYKRmMcnQh5HvNDMWJPQt_kmtLoM0fYUqiXPIQEMgN6McjrZc7JStZIrpOwexC6zC7SOFH4JFW2CO1siaSvPRHH1Awq0bXEHojYea6xNL4ouZx0pNngxFV7p3YwyW2',
-        videoEmbedId: 'irF2lHkQAAM' // ID corregido del video de Il Volo
+        videoEmbedId: 'irF2lHkQAAM' 
       };
       case 'una-noche': return {
         label: t('shows.unaNoche.label'),
@@ -43,7 +43,8 @@ const Shows: React.FC = () => {
         desc: t('shows.pasionLatina.desc'),
         features: t('shows.pasionLatina.features'),
         cta: t('shows.pasionLatina.cta'),
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAnXYrwQRQUyWYiyx993smivWFGjL2ugfvVzfdMtuSKDctFOP6HqAxxPE5n05BRW1FvV59cnLtLqA3guuFvqRCM90vsyTHFLic9pkUiWB6Kkq1W1CWlHLUP908uu6D6wzMdBk2d5-X9p7xaGQyqN-5FEZibo7kA3dLsGiSOw3rEodL8AJa6ulqoOTSrm5DCrI36q4xr968OYZpx2smOf8YyErusbR_JI5pFdVIgGiRLBbH7YLhIOlB82yVfeULiNkWOTwE6bOY6UEuV'
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAnXYrwQRQUyWYiyx993smivWFGjL2ugfvVzfdMtuSKDctFOP6HqAxxPE5n05BRW1FvV59cnLtLqA3guuFvqRCM90vsyTHFLic9pkUiWB6Kkq1W1CWlHLUP908uu6D6wzMdBk2d5-X9p7xaGQyqN-5FEZibo7kA3dLsGiSOw3rEodL8AJa6ulqoOTSrm5DCrI36q4xr968OYZpx2smOf8YyErusbR_JI5pFdVIgGiRLBbH7YLhIOlB82yVfeULiNkWOTwE6bOY6UEuV',
+        videoEmbedId: '3klvU2cLCEE'
       };
       case 'navidad': return {
         label: t('shows.navidad.label'),
@@ -141,14 +142,30 @@ const Shows: React.FC = () => {
             >
               <div className="w-full lg:w-[60%] h-[300px] md:h-[500px] lg:h-[600px] relative rounded-lg overflow-hidden group shadow-2xl bg-black">
                 {activeContent.videoEmbedId ? (
-                  <iframe 
-                    className="absolute inset-0 w-full h-full"
-                    src={`https://www.youtube.com/embed/${activeContent.videoEmbedId}?rel=0&modestbranding=1`}
-                    title={activeContent.title}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
+                  <>
+                    <iframe 
+                      className="absolute inset-0 w-full h-full"
+                      src={`https://www.youtube-nocookie.com/embed/${activeContent.videoEmbedId}?rel=0&modestbranding=1&autoplay=0&showinfo=0&controls=1`}
+                      title={activeContent.title}
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                    
+                    {/* Botón de acceso directo superpuesto sobre el logo de YouTube roto */}
+                    <a 
+                      href={`https://youtu.be/${activeContent.videoEmbedId}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute bottom-4 right-4 z-50 p-2 bg-black/40 backdrop-blur-md rounded-lg border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-black/60 flex items-center gap-2"
+                      title="Ver directamente en YouTube"
+                    >
+                      <span className="text-[10px] text-white/80 font-bold uppercase tracking-wider hidden sm:inline">Ver en YouTube</span>
+                      <svg className="w-6 h-6 fill-red-600" viewBox="0 0 24 24">
+                        <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                      </svg>
+                    </a>
+                  </>
                 ) : (
                   <>
                     <div 
@@ -185,12 +202,26 @@ const Shows: React.FC = () => {
                 
                 <div className="flex flex-wrap items-center gap-6 md:gap-10">
                   <a 
-                    className="inline-flex items-center gap-2 text-neon uppercase tracking-widest text-[10px] md:text-xs font-bold hover:text-white transition-colors group" 
+                    className="inline-flex items-center gap-2 text-neon uppercase tracking-widest text-[10px] md:text-xs font-bold hover:text-white transition-colors group px-6 py-3 border border-neon/30 rounded-full hover:bg-neon/10 transition-all" 
                     href="#contact"
                     onClick={handleCTAClick}
                   >
                     {activeContent.cta} <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
                   </a>
+
+                  {activeContent.videoEmbedId && (
+                    <a 
+                      href={`https://youtu.be/${activeContent.videoEmbedId}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-white/60 hover:text-white uppercase tracking-widest text-[10px] md:text-xs font-bold transition-all group py-3 px-4"
+                    >
+                      <svg className="w-5 h-5 fill-current text-red-600/70 group-hover:text-red-600 transition-colors" viewBox="0 0 24 24">
+                        <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                      </svg>
+                      Ver en YouTube
+                    </a>
+                  )}
                   
                   <button 
                     onClick={() => handleShare(activeContent)}

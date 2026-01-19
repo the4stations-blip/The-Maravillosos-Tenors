@@ -9,6 +9,7 @@ import Shows from './components/Shows';
 import Tenors from './components/Tenors';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 const App: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const App: React.FC = () => {
         <Tenors />
         <Contact />
         <Footer />
+        <ScrollToTop />
       </div>
     </LanguageProvider>
   );

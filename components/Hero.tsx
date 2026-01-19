@@ -81,7 +81,7 @@ const Hero: React.FC = () => {
           <div className="overflow-hidden">
             <motion.h1 
               variants={itemVariants}
-              className="font-serif leading-[0.85] font-black tracking-tighter uppercase text-white mix-blend-screen drop-shadow-2xl" 
+              className="font-serif leading-[0.85] font-black tracking-tighter uppercase text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.5)] text-glow" 
               style={{ fontSize: 'clamp(3rem, 15vw, 14rem)' }}
             >
               {t('hero.titleTop')}
@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
           <div className="overflow-hidden mt-[-0.1em]">
             <motion.h1 
               variants={itemVariants}
-              className="font-serif leading-[0.85] font-thin italic tracking-tight uppercase text-white mix-blend-screen drop-shadow-2xl" 
+              className="font-serif leading-[0.85] font-thin italic tracking-tight uppercase text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.3)] text-glow" 
               style={{ fontSize: 'clamp(3rem, 15vw, 14rem)' }}
             >
               {t('hero.titleBottom')}
@@ -105,7 +105,7 @@ const Hero: React.FC = () => {
           variants={taglineVariants}
           initial="hidden"
           animate="visible"
-          className="text-white text-[10px] md:text-xs tracking-[0.4em] uppercase mix-blend-difference text-center"
+          className="text-white text-[10px] md:text-xs tracking-[0.4em] uppercase mix-blend-difference text-center font-bold"
         >
           {t('hero.tagline')}
         </motion.p>
@@ -113,7 +113,7 @@ const Hero: React.FC = () => {
           initial={{ height: 0 }}
           animate={{ height: 40 }}
           transition={{ duration: 1.5, delay: 1.5, ease: "circOut" }}
-          className="w-[1px] bg-gradient-to-b from-transparent via-white/50 to-transparent mt-6 md:mt-8"
+          className="w-[1px] bg-gradient-to-b from-transparent via-white/80 to-transparent mt-6 md:mt-8 shadow-[0_0_10px_rgba(255,255,255,0.5)]"
         ></motion.div>
       </div>
       
