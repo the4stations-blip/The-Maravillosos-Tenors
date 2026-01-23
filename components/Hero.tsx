@@ -89,7 +89,7 @@ const Hero: React.FC = () => {
             <motion.h1
               variants={itemVariants}
               className="font-serif leading-[0.85] font-black tracking-tighter uppercase text-white"
-              style={{ fontSize: 'clamp(3rem, 15vw, 14rem)' }}
+              style={{ fontSize: 'clamp(2.25rem, 15vw, 14rem)' }}
             >
               {t('hero.titleTop')}
             </motion.h1>
@@ -98,7 +98,7 @@ const Hero: React.FC = () => {
             <motion.h1
               variants={itemVariants}
               className="font-serif leading-[0.85] font-thin italic tracking-tight uppercase text-white"
-              style={{ fontSize: 'clamp(3rem, 15vw, 14rem)' }}
+              style={{ fontSize: 'clamp(2.25rem, 15vw, 14rem)' }}
             >
               {t('hero.titleBottom')}
             </motion.h1>
