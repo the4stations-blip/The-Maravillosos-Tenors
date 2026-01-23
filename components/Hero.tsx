@@ -16,6 +16,9 @@ const Hero: React.FC = () => {
   const yText = useTransform(scrollY, [0, 800], [0, -120]);
   const opacityText = useTransform(scrollY, [0, 500], [1, 0]);
 
+  // White mask opacity transition
+  const opacityMask = useTransform(scrollY, [0, 300], [0.6, 0]);
+
   // Animation Variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -55,42 +58,46 @@ const Hero: React.FC = () => {
   return (
     <section className="relative h-screen md:h-[110vh] w-full overflow-hidden isolate bg-dark">
       {/* Parallax Background Container */}
-      <motion.div 
+      <motion.div
         style={{ y: yBg, scale: scaleBg, opacity: opacityBg }}
         className="absolute inset-0 z-0 origin-center"
       >
         <div className="absolute inset-0 bg-dark/40 z-10"></div>
-        <img 
-          alt="Cinematic Background" 
-          className="w-full h-full object-cover brightness-[1.2] contrast-[1.1]" 
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr_Zw8ybUk7StU43bmWkcCrlVktL2wxUSK6sA-mhlYhmHvVDJ3ptz_VnKPvRszXQxh_PoY0dfvsEDhPf0QAKirUTisgw1yQsVt5Nd7OdZUvbJVBtDrhs_rlOQgCph0A5d5RrhyBNbxCEXloBBYKRmMcnQh5HvNDMWJPQt_kmtLoM0fYUqiXPIQEMgN6McjrZc7JStZIrpOwexC6zC7SOFH4JFW2CO1siaSvPRHH1Awq0bXEHojYea6xNL4ouZx0pNngxFV7p3YwyW2"
+        <motion.div
+          className="absolute inset-0 bg-white z-[15]"
+          style={{ opacity: opacityMask }}
+        ></motion.div>
+        <img
+          alt="Cinematic Background"
+          className="w-full h-full object-cover object-top brightness-[1.2] contrast-[1.1]"
+          src="/hero-image.jpg"
         />
       </motion.div>
 
       {/* Main Title Layer */}
-      <motion.div 
+      <motion.div
         style={{ y: yText, opacity: opacityText }}
         className="absolute inset-0 z-20 flex flex-col items-center justify-center immersive-mask pointer-events-none select-none px-6"
       >
-        <motion.div 
+        <motion.div
           className="relative text-center w-full max-w-[1400px]"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           <div className="overflow-hidden">
-            <motion.h1 
+            <motion.h1
               variants={itemVariants}
-              className="font-serif leading-[0.85] font-black tracking-tighter uppercase text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.5)] text-glow" 
+              className="font-serif leading-[0.85] font-black tracking-tighter uppercase text-white"
               style={{ fontSize: 'clamp(3rem, 15vw, 14rem)' }}
             >
               {t('hero.titleTop')}
             </motion.h1>
           </div>
           <div className="overflow-hidden mt-[-0.1em]">
-            <motion.h1 
+            <motion.h1
               variants={itemVariants}
-              className="font-serif leading-[0.85] font-thin italic tracking-tight uppercase text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.3)] text-glow" 
+              className="font-serif leading-[0.85] font-thin italic tracking-tight uppercase text-white"
               style={{ fontSize: 'clamp(3rem, 15vw, 14rem)' }}
             >
               {t('hero.titleBottom')}
@@ -101,7 +108,7 @@ const Hero: React.FC = () => {
 
       {/* Static/UI Layer */}
       <div className="absolute inset-0 z-30 flex flex-col items-center justify-end pb-12 md:pb-24 pointer-events-none px-6">
-        <motion.p 
+        <motion.p
           variants={taglineVariants}
           initial="hidden"
           animate="visible"
@@ -109,14 +116,14 @@ const Hero: React.FC = () => {
         >
           {t('hero.tagline')}
         </motion.p>
-        <motion.div 
+        <motion.div
           initial={{ height: 0 }}
           animate={{ height: 40 }}
           transition={{ duration: 1.5, delay: 1.5, ease: "circOut" }}
           className="w-[1px] bg-gradient-to-b from-transparent via-white/80 to-transparent mt-6 md:mt-8 shadow-[0_0_10px_rgba(255,255,255,0.5)]"
         ></motion.div>
       </div>
-      
+
       {/* Bottom fade to content */}
       <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-dark to-transparent z-40"></div>
     </section>
