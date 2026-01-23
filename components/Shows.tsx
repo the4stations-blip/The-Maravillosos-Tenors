@@ -161,11 +161,14 @@ const Shows: React.FC = () => {
                   </>
                 )}
 
-                <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-20 pointer-events-none">
-                  <span className="inline-block px-3 py-1 bg-neon/80 backdrop-blur-md text-white text-[10px] font-bold tracking-widest uppercase mb-2 shadow-lg">
-                    {activeContent.tag}
-                  </span>
-                </div>
+
+                {!activeContent.videoEmbedId && (
+                  <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-20 pointer-events-none">
+                    <span className="inline-block px-3 py-1 bg-neon/80 backdrop-blur-md text-white text-[10px] font-bold tracking-widest uppercase mb-2 shadow-lg">
+                      {activeContent.tag}
+                    </span>
+                  </div>
+                )}
               </div>
 
               <div className="w-full lg:w-[40%] flex flex-col justify-center pt-4">
