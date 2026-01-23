@@ -112,7 +112,7 @@ const Hero: React.FC = () => {
           variants={taglineVariants}
           initial="hidden"
           animate="visible"
-          className="text-white text-[10px] md:text-xs tracking-[0.4em] uppercase mix-blend-difference text-center font-bold"
+          className="text-white text-xs md:text-sm tracking-[0.4em] uppercase mix-blend-difference text-center font-bold"
         >
           {t('hero.tagline')}
         </motion.p>

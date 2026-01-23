@@ -59,14 +59,14 @@ const Tenors: React.FC = () => {
             </div>
             <div className="flex gap-4 self-end md:self-auto">
               <button
-                className="size-10 md:size-12 rounded-full border border-white/10 flex items-center justify-center text-neon hover:bg-neon hover:text-white transition-all duration-300"
+                className="size-11 md:size-12 rounded-full border border-white/10 flex items-center justify-center text-neon hover:bg-neon hover:text-white transition-all duration-300"
                 onClick={() => scroll('left')}
                 aria-label="Scroll Left"
               >
                 <span className="material-symbols-outlined text-xl md:text-2xl">arrow_back</span>
               </button>
               <button
-                className="size-10 md:size-12 rounded-full border border-white/10 flex items-center justify-center text-neon hover:bg-neon hover:text-white transition-all duration-300"
+                className="size-11 md:size-12 rounded-full border border-white/10 flex items-center justify-center text-neon hover:bg-neon hover:text-white transition-all duration-300"
                 onClick={() => scroll('right')}
                 aria-label="Scroll Right"
               >

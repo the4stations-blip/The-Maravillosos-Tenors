@@ -47,21 +47,20 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav 
-        className={`fixed top-0 left-0 right-0 z-[60] px-4 md:px-8 py-3 md:py-4 transition-all duration-500 ease-in-out ${
-          isScrolled 
-            ? 'bg-dark/80 backdrop-blur-xl border-b border-white/5 shadow-2xl' 
+      <nav
+        className={`fixed top-0 left-0 right-0 z-[60] px-4 md:px-8 py-3 md:py-4 transition-all duration-500 ease-in-out ${isScrolled
+            ? 'bg-dark/80 backdrop-blur-xl border-b border-white/5 shadow-2xl'
             : 'bg-transparent border-b border-transparent'
-        } text-white`}
+          } text-white`}
       >
         <div className="max-w-[1600px] mx-auto flex items-center justify-between">
-          <motion.a 
-            className="flex items-center gap-3 group cursor-pointer" 
+          <motion.a
+            className="flex items-center gap-3 group cursor-pointer"
             href="#"
             onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
             whileHover="hover"
           >
-            <motion.span 
+            <motion.span
               variants={{
                 hover: { scale: 1.1, rotate: [0, -10, 10, 0], transition: { duration: 0.5 } }
               }}
@@ -69,7 +68,7 @@ const Navbar: React.FC = () => {
             >
               graphic_eq
             </motion.span>
-            <motion.span 
+            <motion.span
               variants={{
                 hover: { tracking: '0.25em', opacity: 1 }
               }}
@@ -84,9 +83,9 @@ const Navbar: React.FC = () => {
             <div className="hidden lg:flex items-center gap-10">
               <div className="flex gap-8 text-[10px] font-bold tracking-[0.2em] uppercase">
                 {navLinks.map(link => (
-                  <motion.a 
+                  <motion.a
                     key={link.id}
-                    className="relative py-2 hover:text-neon transition-colors duration-300" 
+                    className="relative py-2 hover:text-neon transition-colors duration-300"
                     href={`#${link.id}`}
                     onClick={(e) => handleScroll(e, link.id)}
                     whileHover="hover"
@@ -115,13 +114,13 @@ const Navbar: React.FC = () => {
             </div>
 
             {/* Language Selector: ES Left, EN Right */}
-            <div 
-              aria-label="Language Selector" 
+            <div
+              aria-label="Language Selector"
               className="relative group cursor-pointer select-none"
               onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
             >
               <div className="relative flex items-center bg-white/5 border border-white/10 rounded-full p-[3px] md:p-[4px] w-[70px] md:w-[80px] h-[28px] md:h-[32px] backdrop-blur-md overflow-hidden">
-                <div 
+                <div
                   className={`absolute top-[3px] md:top-[4px] bottom-[3px] md:bottom-[4px] left-[3px] md:left-[4px] w-[30px] md:w-[34px] bg-neon rounded-full transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${lang === 'en' ? 'translate-x-[34px] md:translate-x-[38px]' : 'translate-x-[0px]'}`}
                 ></div>
                 <div className="relative z-10 w-full flex items-center justify-around h-full">
@@ -132,8 +131,8 @@ const Navbar: React.FC = () => {
             </div>
 
             {/* Mobile Menu Toggle */}
-            <button 
-              className="lg:hidden flex items-center justify-center size-10 rounded-full bg-white/5 border border-white/10 transition-transform active:scale-90"
+            <button
+              className="lg:hidden flex items-center justify-center size-11 rounded-full bg-white/5 border border-white/10 transition-transform active:scale-90"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               <span className="material-symbols-outlined text-2xl">
@@ -147,7 +146,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Navigation Overlay */}
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -168,7 +167,7 @@ const Navbar: React.FC = () => {
                 </motion.a>
               ))}
             </div>
-            
+
             <div className="mt-20 flex flex-col items-center gap-4">
               <span className="text-[10px] tracking-[0.4em] text-white/30 uppercase">{t('hero.tagline')}</span>
               <div className="w-12 h-px bg-white/10"></div>
