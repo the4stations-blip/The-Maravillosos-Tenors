@@ -59,7 +59,7 @@ const Tenors: React.FC = () => {
         </div>
 
         {/* Navigation arrows */}
-        <div className="hidden md:flex gap-4 mb-8 justify-end">
+        <div className="flex gap-4 mb-8 justify-end">
           <button
             onClick={() => scroll('left')}
             className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-neon hover:border-neon transition-all group"
