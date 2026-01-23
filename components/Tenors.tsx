@@ -1,9 +1,11 @@
 
-import React from 'react';
+
+import React, { useState, useRef } from 'react';
 import { useLanguage } from './LanguageContext';
 
 const Tenors: React.FC = () => {
   const { t } = useLanguage();
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const artistData = [
     {
@@ -32,6 +34,17 @@ const Tenors: React.FC = () => {
     }
   ];
 
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 500;
+      const newScrollPosition = scrollContainerRef.current.scrollLeft + (direction === 'right' ? scrollAmount : -scrollAmount);
+      scrollContainerRef.current.scrollTo({
+        left: newScrollPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <section className="relative min-h-[80vh] w-full bg-dark overflow-hidden flex flex-col py-20 md:py-32" id="tenors">
       <div className="max-w-[1800px] mx-auto w-full px-4 md:px-8 lg:px-12 flex flex-col h-full z-10">
@@ -45,16 +58,34 @@ const Tenors: React.FC = () => {
           </div>
         </div>
 
-        <div className="group/container gallery-scroll flex overflow-x-auto snap-x snap-mandatory pb-4 md:pb-12 gap-6 md:gap-16 w-full -mx-4 px-4 md:mx-0 md:px-0">
+        {/* Navigation arrows */}
+        <div className="hidden md:flex gap-4 mb-8 justify-end">
+          <button
+            onClick={() => scroll('left')}
+            className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-neon hover:border-neon transition-all group"
+            aria-label="Previous"
+          >
+            <span className="material-symbols-outlined group-hover:scale-110 transition-transform">arrow_back</span>
+          </button>
+          <button
+            onClick={() => scroll('right')}
+            className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-neon hover:border-neon transition-all group"
+            aria-label="Next"
+          >
+            <span className="material-symbols-outlined group-hover:scale-110 transition-transform">arrow_forward</span>
+          </button>
+        </div>
+
+        <div ref={scrollContainerRef} className="group/container gallery-scroll flex overflow-x-auto snap-x snap-mandatory pb-4 md:pb-12 gap-6 md:gap-16 w-full -mx-4 px-4 md:mx-0 md:px-0">
           {artistData.map((artist, idx) => (
-            <div 
+            <div
               key={idx}
               className="snap-center shrink-0 w-[80vw] sm:w-[350px] md:w-[450px] h-[550px] md:h-[650px] relative overflow-hidden group rounded-lg bg-dark-surface border border-white/5 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] md:hover:scale-[1.02] lg:group-hover/container:opacity-40 lg:hover:!opacity-100 lg:group-hover/container:grayscale lg:hover:!grayscale-0 z-0 lg:hover:z-10"
             >
               <div className="absolute inset-0 z-0 bg-dark-surface">
-                <img 
-                  alt={artist.name} 
-                  className="w-full h-full object-cover transition-all duration-1000 ease-out md:group-hover:scale-105" 
+                <img
+                  alt={artist.name}
+                  className="w-full h-full object-cover transition-all duration-1000 ease-out md:group-hover:scale-105"
                   src={artist.image}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-90 transition-opacity duration-700"></div>

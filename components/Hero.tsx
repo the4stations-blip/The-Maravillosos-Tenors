@@ -16,8 +16,8 @@ const Hero: React.FC = () => {
   const yText = useTransform(scrollY, [0, 800], [0, -120]);
   const opacityText = useTransform(scrollY, [0, 500], [1, 0]);
 
-  // White mask opacity transition
-  const opacityMask = useTransform(scrollY, [0, 300], [0.6, 0]);
+  // White mask opacity transition (higher on mobile for better contrast)
+  const opacityMask = useTransform(scrollY, [0, 300], [0.75, 0]);
 
   // Animation Variants
   const containerVariants = {
