@@ -42,20 +42,20 @@ const Repertoire: React.FC = () => {
       <div className="max-w-[1600px] mx-auto px-4 md:px-8">
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 md:mb-16 gap-8">
           <div>
-            <h2 className="font-serif text-5xl md:text-8xl text-white mb-4 md:mb-6 leading-[0.9]">
-              {t('repertoire.title')}<br/><span className="text-neon italic">{t('repertoire.titleAccent')}</span>
+            <h2 className="font-serif text-4xl md:text-8xl text-white mb-4 md:mb-6 leading-[0.9]">
+              {t('repertoire.title')}<br /><span className="text-neon italic">{t('repertoire.titleAccent')}</span>
             </h2>
-            <p className="text-text-muted max-w-sm text-sm md:text-base">{t('repertoire.desc')}</p>
+            <p className="text-text-muted max-w-sm text-base md:text-lg">{t('repertoire.desc')}</p>
           </div>
           <div className="flex gap-4 self-end md:self-auto">
-            <button 
+            <button
               className="size-10 md:size-12 rounded-full border border-white/10 flex items-center justify-center text-neon hover:bg-neon hover:text-white transition-all duration-300"
               onClick={() => handleScroll('left')}
               aria-label="Scroll Left"
             >
               <span className="material-symbols-outlined text-xl md:text-2xl">arrow_back</span>
             </button>
-            <button 
+            <button
               className="size-10 md:size-12 rounded-full border border-white/10 flex items-center justify-center text-neon hover:bg-neon hover:text-white transition-all duration-300"
               onClick={() => handleScroll('right')}
               aria-label="Scroll Right"
@@ -64,23 +64,23 @@ const Repertoire: React.FC = () => {
             </button>
           </div>
         </div>
-        
-        <div 
+
+        <div
           ref={scrollRef}
           className="gallery-scroll flex items-center gap-4 md:gap-8 overflow-x-auto pb-4 md:pb-8 h-[450px] md:h-[550px] snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0"
         >
           {performanceData.map((item, idx) => (
-            <div 
+            <div
               key={idx}
               className={`snap-center shrink-0 h-full ${item.large ? 'w-[85vw] md:w-[600px]' : 'w-[75vw] md:w-[350px]'} relative group cursor-pointer overflow-hidden rounded-lg bg-dark-surface border border-white/5`}
             >
-              <div 
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 md:group-hover:scale-105" 
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-1000 md:group-hover:scale-105"
                 style={{ backgroundImage: `url('${item.image}')` }}
               ></div>
               {/* Enhanced bottom gradient for better text legibility */}
               <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/40 to-transparent opacity-100 transition-all duration-500"></div>
-              
+
               {item.icon && (
                 <div className="absolute top-4 right-4 z-20">
                   <span className="material-symbols-outlined text-white/80 drop-shadow-md">{item.icon}</span>
@@ -106,7 +106,7 @@ const Repertoire: React.FC = () => {
                   {item.sub && <p className="text-text-muted text-xs md:text-sm mt-3 opacity-80">{item.sub}</p>}
                 </div>
               </div>
-              
+
               {/* Play button shifted slightly up to avoid collision with bottom text on smaller heights */}
               <div className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 size-14 md:size-16 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center opacity-0 md:group-hover:opacity-100 transform scale-90 md:group-hover:scale-100 transition-all duration-300 shadow-2xl">
                 <span className="material-symbols-outlined text-white text-2xl md:text-3xl">play_arrow</span>
