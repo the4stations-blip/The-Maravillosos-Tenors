@@ -38,9 +38,6 @@ const Contact: React.FC = () => {
 
   return (
     <section className="relative py-32 bg-dark flex items-center justify-center overflow-hidden" id="contact">
-      <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neon/5 rounded-full blur-[150px] animate-pulse-slow"></div>
-      </div>
       <div className="container max-w-[900px] mx-auto px-6 relative z-10">
         <div className="glass-card rounded-[2rem] p-12 md:p-24 text-center transform hover:scale-[1.01] transition-transform duration-700">
           <div className="inline-flex items-center justify-center p-4 rounded-full bg-white/5 border border-white/10 mb-10 text-neon shadow-[0_0_30px_rgba(75,92,160,0.2)]">
