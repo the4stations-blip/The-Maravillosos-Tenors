@@ -48,7 +48,7 @@ const Tenors: React.FC = () => {
   return (
     <section className="relative min-h-[80vh] w-full bg-dark overflow-hidden flex flex-col py-20 md:py-32" id="tenors">
       <div className="max-w-[1800px] mx-auto w-full px-4 md:px-8 lg:px-12 flex flex-col h-full z-10">
-        <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-12 md:mb-24 border-b border-white/5 pb-8 gap-6">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 md:mb-24 border-b border-white/5 pb-8 gap-8">
           <h2 className="font-serif text-5xl md:text-8xl text-white leading-[0.9]">{t('tenors.title')}</h2>
           <div className="flex items-end justify-between md:justify-end gap-6 md:gap-8">
             <div className="text-right">
