@@ -49,30 +49,28 @@ const Tenors: React.FC = () => {
     <section className="relative min-h-[80vh] w-full bg-dark overflow-hidden flex flex-col py-20 md:py-32" id="tenors">
       <div className="max-w-[1800px] mx-auto w-full px-4 md:px-8 lg:px-12 flex flex-col h-full z-10">
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 md:mb-24 border-b border-white/5 pb-8 gap-8">
-          <h2 className="font-serif text-5xl md:text-8xl text-white leading-[0.9]">{t('tenors.title')}</h2>
-          <div className="flex items-end justify-between md:justify-end gap-6 md:gap-8">
-            <div className="text-right">
-              <span className="text-[10px] tracking-[0.3em] uppercase text-text-muted block">{t('tenors.tagline')}</span>
-              <div className="w-full md:w-32 h-[1px] bg-white/10 mt-4 relative overflow-hidden rounded-full mx-auto md:ml-auto md:mr-0">
-                <div className="absolute left-0 top-0 h-full w-1/4 bg-neon"></div>
-              </div>
+          <div>
+            <h2 className="font-serif text-5xl md:text-8xl text-white mb-4 md:mb-6 leading-[0.9]">{t('tenors.title')}</h2>
+            <div className="flex items-center gap-4">
+              <span className="text-[10px] tracking-[0.3em] uppercase text-text-muted">{t('tenors.tagline')}</span>
+              <div className="w-8 h-[1px] bg-neon/50"></div>
             </div>
-            <div className="flex gap-4 self-end md:self-auto">
-              <button
-                className="size-11 md:size-12 rounded-full border border-white/10 flex items-center justify-center text-neon hover:bg-neon hover:text-white transition-all duration-300"
-                onClick={() => scroll('left')}
-                aria-label="Scroll Left"
-              >
-                <span className="material-symbols-outlined text-xl md:text-2xl">arrow_back</span>
-              </button>
-              <button
-                className="size-11 md:size-12 rounded-full border border-white/10 flex items-center justify-center text-neon hover:bg-neon hover:text-white transition-all duration-300"
-                onClick={() => scroll('right')}
-                aria-label="Scroll Right"
-              >
-                <span className="material-symbols-outlined text-xl md:text-2xl">arrow_forward</span>
-              </button>
-            </div>
+          </div>
+          <div className="flex gap-4 self-end md:self-auto">
+            <button
+              className="size-11 md:size-12 rounded-full border border-white/10 flex items-center justify-center text-neon hover:bg-neon hover:text-white transition-all duration-300"
+              onClick={() => scroll('left')}
+              aria-label="Scroll Left"
+            >
+              <span className="material-symbols-outlined text-xl md:text-2xl">arrow_back</span>
+            </button>
+            <button
+              className="size-11 md:size-12 rounded-full border border-white/10 flex items-center justify-center text-neon hover:bg-neon hover:text-white transition-all duration-300"
+              onClick={() => scroll('right')}
+              aria-label="Scroll Right"
+            >
+              <span className="material-symbols-outlined text-xl md:text-2xl">arrow_forward</span>
+            </button>
           </div>
         </div>
 

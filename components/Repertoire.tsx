@@ -45,7 +45,7 @@ const Repertoire: React.FC = () => {
             <h2 className="font-serif text-4xl md:text-8xl text-white mb-4 md:mb-6 leading-[0.9]">
               {t('repertoire.title')}<br /><span className="text-neon italic">{t('repertoire.titleAccent')}</span>
             </h2>
-            <p className="text-text-muted max-w-sm text-base md:text-lg hidden md:block">{t('repertoire.desc')}</p>
+            <p className="text-text-muted max-w-sm text-base md:text-lg">{t('repertoire.desc')}</p>
           </div>
           <div className="flex gap-4 self-end md:self-auto">
             <button
