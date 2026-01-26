@@ -90,7 +90,8 @@ const translations = {
     contact: {
       title: "Consultas y Reservas",
       desc: "Para eventos distinguidos que requieran una atmósfera de elegancia inigualable.",
-      copy: "Click para contactar"
+      copy: "Click para contactar",
+      clickAction: "PULSA EL CORREO PARA CONTACTAR"
     },
     footer: {
       rights: "© 2024 The Maravillosos Tenors. Todos los derechos reservados."
@@ -176,7 +177,8 @@ const translations = {
     contact: {
       title: "Inquiries & Bookings",
       desc: "For distinguished events requiring an atmosphere of unparalleled elegance.",
-      copy: "Click to contact"
+      copy: "Click to contact",
+      clickAction: "TAP EMAIL TO CONTACT"
     },
     footer: {
       rights: "© 2024 The Maravillosos Tenors. All Rights Reserved."

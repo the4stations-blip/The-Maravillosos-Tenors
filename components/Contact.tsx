@@ -73,11 +73,16 @@ const Contact: React.FC = () => {
               />
             </motion.a>
 
-            <div className="absolute -bottom-10 left-0 w-full text-center opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
-              <span className="text-neon text-[10px] uppercase tracking-[0.4em] font-bold">
-                {t('contact.copy')}
-              </span>
-            </div>
+            <motion.div
+              initial={{ opacity: 0.6 }}
+              whileHover={{ opacity: 1, scale: 1.05 }}
+              className="mt-6 flex items-center justify-center gap-2 text-neon/80 text-[10px] md:text-xs tracking-[0.2em] font-bold uppercase cursor-pointer"
+            >
+              <span className="material-symbols-outlined text-sm animate-pulse">touch_app</span>
+              <span>{t('contact.clickAction')}</span>
+            </motion.div>
+
+            {/* Old hover hint removed in favor of permanent subtitle */}
           </div>
 
           <div className="flex justify-center items-center gap-6">
