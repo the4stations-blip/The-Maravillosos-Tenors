@@ -1,6 +1,7 @@
 
 import React, { useRef } from 'react';
 import { useLanguage } from './LanguageContext';
+import { ArrowBackIcon, ArrowForwardIcon, PlayArrowIcon } from './Icons';
 
 const Repertoire: React.FC = () => {
   const { t } = useLanguage();
@@ -53,14 +54,14 @@ const Repertoire: React.FC = () => {
               onClick={() => handleScroll('left')}
               aria-label="Scroll Left"
             >
-              <span className="material-symbols-outlined text-xl md:text-2xl">arrow_back</span>
+              <ArrowBackIcon className="w-5 h-5 md:w-6 md:h-6" />
             </button>
             <button
               className="size-11 md:size-12 rounded-full border border-white/10 flex items-center justify-center text-neon hover:bg-neon hover:text-white transition-all duration-300"
               onClick={() => handleScroll('right')}
               aria-label="Scroll Right"
             >
-              <span className="material-symbols-outlined text-xl md:text-2xl">arrow_forward</span>
+              <ArrowForwardIcon className="w-5 h-5 md:w-6 md:h-6" />
             </button>
           </div>
         </div>
@@ -83,7 +84,7 @@ const Repertoire: React.FC = () => {
 
               {item.icon && (
                 <div className="absolute top-4 right-4 z-20">
-                  <span className="material-symbols-outlined text-white/80 drop-shadow-md">{item.icon}</span>
+                  <svg className="w-6 h-6 text-white/80 drop-shadow-md" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" /></svg>
                 </div>
               )}
 
@@ -109,7 +110,7 @@ const Repertoire: React.FC = () => {
 
               {/* Play button shifted slightly up to avoid collision with bottom text on smaller heights */}
               <div className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 size-14 md:size-16 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center opacity-0 md:group-hover:opacity-100 transform scale-90 md:group-hover:scale-100 transition-all duration-300 shadow-2xl">
-                <span className="material-symbols-outlined text-white text-2xl md:text-3xl">play_arrow</span>
+                <PlayArrowIcon className="w-6 h-6 md:w-8 md:h-8 text-white" />
               </div>
             </div>
           ))}

@@ -2,6 +2,7 @@
 import React from 'react';
 import { useLanguage } from './LanguageContext';
 import { motion } from 'framer-motion';
+import { MailIcon, TouchAppIcon } from './Icons';
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();
@@ -41,7 +42,7 @@ const Contact: React.FC = () => {
       <div className="container max-w-[900px] mx-auto px-6 relative z-10">
         <div className="glass-card rounded-[2rem] p-12 md:p-24 text-center transform hover:scale-[1.01] transition-transform duration-700">
           <div className="inline-flex items-center justify-center p-4 rounded-full bg-white/5 border border-white/10 mb-10 text-neon shadow-[0_0_30px_rgba(75,92,160,0.2)]">
-            <span className="material-symbols-outlined text-3xl">mail</span>
+            <MailIcon className="w-8 h-8" />
           </div>
           <h2 className="font-serif text-4xl md:text-5xl text-white mb-6 engraved-text">{t('contact.title')}</h2>
           <p className="text-text-muted mb-12 max-w-md mx-auto leading-relaxed">
@@ -78,7 +79,7 @@ const Contact: React.FC = () => {
               whileHover={{ opacity: 1, scale: 1.05 }}
               className="mt-6 flex items-center justify-center gap-2 text-neon/80 text-[10px] md:text-xs tracking-[0.2em] font-bold uppercase cursor-pointer"
             >
-              <span className="material-symbols-outlined text-sm animate-pulse">touch_app</span>
+              <TouchAppIcon className="w-4 h-4 animate-pulse" />
               <span>{t('contact.clickAction')}</span>
             </motion.div>
 

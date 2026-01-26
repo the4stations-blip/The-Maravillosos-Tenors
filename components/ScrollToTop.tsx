@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowUpwardIcon } from './Icons';
 
 const ScrollToTop: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -38,9 +39,7 @@ const ScrollToTop: React.FC = () => {
           className="fixed bottom-8 right-8 z-[100] size-12 md:size-14 rounded-full glass-card border border-white/10 flex items-center justify-center text-white/70 hover:text-neon shadow-2xl transition-colors duration-300"
           aria-label="Volver arriba"
         >
-          <span className="material-symbols-outlined text-2xl md:text-3xl">
-            north
-          </span>
+          <ArrowUpwardIcon className="w-6 h-6 md:w-7 md:h-7" />
           <div className="absolute inset-0 rounded-full bg-neon/5 blur-lg -z-10 group-hover:bg-neon/20 transition-all duration-500"></div>
         </motion.button>
       )}

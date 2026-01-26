@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from './LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import { CheckCircleIcon, ArrowForwardIcon, ShareIcon } from './Icons';
 
 type TabId = 'sinfonico' | 'una-noche' | 'pasion-latina' | 'navidad';
 
@@ -182,7 +183,7 @@ const Shows: React.FC = () => {
                 <ul className="space-y-3 md:space-y-4 mb-8 md:mb-10 text-xs md:text-sm text-white/80 tracking-wide">
                   {activeContent.features.map((f: string, i: number) => (
                     <li key={i} className="flex items-center gap-3">
-                      <span className="material-symbols-outlined text-neon text-lg">check_circle</span>
+                      <CheckCircleIcon className="w-5 h-5 text-neon" />
                       {f}
                     </li>
                   ))}
@@ -194,7 +195,7 @@ const Shows: React.FC = () => {
                     href="#contact"
                     onClick={handleCTAClick}
                   >
-                    {activeContent.cta} <span className="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    {activeContent.cta} <ArrowForwardIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </a>
 
                   {activeContent.videoEmbedId && (
@@ -219,11 +220,10 @@ const Shows: React.FC = () => {
                       animate={isShared ? {
                         scale: [1, 1.3, 1],
                         color: ['#8A92A3', '#4B5CA0', '#4B5CA0'],
-                        textShadow: ['0 0 0px rgba(75,92,160,0)', '0 0 10px rgba(75,92,160,0.8)', '0 0 5px rgba(75,92,160,0.5)']
                       } : { scale: 1, color: 'inherit' }}
-                      className="material-symbols-outlined text-base transition-colors group-hover:scale-110"
+                      className="transition-colors group-hover:scale-110"
                     >
-                      {isShared ? 'check_circle' : 'share'}
+                      {isShared ? <CheckCircleIcon className="w-4 h-4" /> : <ShareIcon className="w-4 h-4" />}
                     </motion.span>
 
                     <div className="relative overflow-hidden h-4 flex items-center">

@@ -2,6 +2,7 @@
 
 import React, { useState, useRef } from 'react';
 import { useLanguage } from './LanguageContext';
+import { ArrowBackIcon, ArrowForwardIcon } from './Icons';
 
 const Tenors: React.FC = () => {
   const { t } = useLanguage();
@@ -62,14 +63,14 @@ const Tenors: React.FC = () => {
               onClick={() => scroll('left')}
               aria-label="Scroll Left"
             >
-              <span className="material-symbols-outlined text-xl md:text-2xl">arrow_back</span>
+              <ArrowBackIcon className="w-5 h-5 md:w-6 md:h-6" />
             </button>
             <button
               className="size-11 md:size-12 rounded-full border border-white/10 flex items-center justify-center text-neon hover:bg-neon hover:text-white transition-all duration-300"
               onClick={() => scroll('right')}
               aria-label="Scroll Right"
             >
-              <span className="material-symbols-outlined text-xl md:text-2xl">arrow_forward</span>
+              <ArrowForwardIcon className="w-5 h-5 md:w-6 md:h-6" />
             </button>
           </div>
         </div>
@@ -101,7 +102,7 @@ const Tenors: React.FC = () => {
                       {artist.bio}
                     </p>
                     <button className="text-[10px] tracking-[0.2em] uppercase text-white hover:text-neon transition-colors flex items-center gap-2 group/btn">
-                      {t('tenors.viewProfile')} <span className="material-symbols-outlined text-sm group-hover/btn:translate-x-1 transition-transform">arrow_forward</span>
+                      {t('tenors.viewProfile')} <ArrowForwardIcon className="w-3 h-3 group-hover/btn:translate-x-1 transition-transform" />
                     </button>
                   </div>
                 </div>

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from './LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import { MenuIcon, CloseIcon } from './Icons';
 
 const Navbar: React.FC = () => {
   const { lang, setLang, t } = useLanguage();
@@ -49,8 +50,8 @@ const Navbar: React.FC = () => {
     <>
       <nav
         className={`fixed top-0 left-0 right-0 z-[60] px-4 md:px-8 py-3 md:py-4 transition-all duration-500 ease-in-out ${isScrolled
-            ? 'bg-dark/80 backdrop-blur-xl border-b border-white/5 shadow-2xl'
-            : 'bg-transparent border-b border-transparent'
+          ? 'bg-dark/80 backdrop-blur-xl border-b border-white/5 shadow-2xl'
+          : 'bg-transparent border-b border-transparent'
           } text-white`}
       >
         <div className="max-w-[1600px] mx-auto flex items-center justify-between">
@@ -64,9 +65,11 @@ const Navbar: React.FC = () => {
               variants={{
                 hover: { scale: 1.1, rotate: [0, -10, 10, 0], transition: { duration: 0.5 } }
               }}
-              className="material-symbols-outlined text-2xl md:text-3xl text-white group-hover:text-neon transition-colors"
+              className="text-white group-hover:text-neon transition-colors"
             >
-              graphic_eq
+              <svg className="w-6 h-6 md:w-7 md:h-7" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M7 18h2V6H7v12zm4-12v12h2V6h-2zm4 0v12h2V6h-2z" />
+              </svg>
             </motion.span>
             <motion.span
               variants={{
@@ -135,9 +138,7 @@ const Navbar: React.FC = () => {
               className="lg:hidden flex items-center justify-center size-11 rounded-full bg-white/5 border border-white/10 transition-transform active:scale-90"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <span className="material-symbols-outlined text-2xl">
-                {isMenuOpen ? 'close' : 'menu'}
-              </span>
+              {isMenuOpen ? <CloseIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
             </button>
           </div>
         </div>
