@@ -71,8 +71,8 @@ const translations = {
         title: "Especial de",
         subtitle: "Navidad",
         tag: "Especial Festivo",
-        desc: "Vive la magia de las fiestas con villancicos atemporales y música sagrada. 'Adeste Fideles', 'Noche de Paz' y 'Ave María' interpretados en una armonía gloriosa.",
-        features: ['Clásicos de Temporada', 'Repertorio Sagrado', 'Para toda la Familia'],
+        desc: "¡Vive la Navidad como nunca antes! Adeste Fideles, Noche de Paz, Oh Holy Night, Blanca Navidad, Hallelujah… y mucho más. Con voces impresionantes, presencia arrolladora y una puesta en escena única, te harán sentir la magia de los villancicos clásicos y grandes éxitos en un concierto elegante, emocionante y totalmente interactivo. Una experiencia memorable que transformará tus fiestas en momentos mágicos. ¡No te lo puedes perder!",
+        features: ['Disponible para Encendidos de Navidad', 'Magia Navideña en Vivo', 'Un Show para Toda la Familia'],
         cta: "Reserva de Temporada"
       }
     },
@@ -154,12 +154,12 @@ const translations = {
         cta: "View Gallery"
       },
       navidad: {
-        label: "Concierto Navidad",
+        label: "Christmas Concert",
         title: "Christmas",
         subtitle: "Spectacular",
         tag: "Holiday Special",
-        desc: "Experience the magic of the holidays with timeless carols and sacred music. 'Adeste Fideles', 'Silent Night', and 'Ave Maria' performed in glorious harmony.",
-        features: ['Seasonal Classics', 'Sacred Repertoire', 'Family Friendly'],
+        desc: "Experience Christmas like never before! Adeste Fideles, Silent Night, Oh Holy Night, White Christmas, Hallelujah… and much more. With impressive voices, overwhelming presence and a unique staging, they will make you feel the magic of classic carols and greatest hits in an elegant, exciting and totally interactive concert. A memorable experience that will transform your holidays into magical moments. Don't miss it!",
+        features: ['Available for Christmas Light-Up Events', 'Live Christmas Magic', 'A Show for the Whole Family'],
         cta: "Seasonal Booking"
       }
     },
