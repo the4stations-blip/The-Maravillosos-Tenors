@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://themaravillosostenors.com/sitemap.xml
+Sitemap: https://themaravillosostenors.es/sitemap.xml
