@@ -44,8 +44,8 @@ const translations = {
         title: "Gran",
         subtitle: "Sinfónico",
         tag: "Obra Maestra Orquestal",
-        desc: "Un viaje inmersivo a través de las mejores arias de ópera, acompañado por una orquesta sinfónica de 60 músicos. Este espectáculo combina la potencia de 'The Maravillosos Tenors' con arreglos orquestales sublimes.",
-        features: ['Acompañamiento de Orquesta Completa', 'Repertorio Clásico Italiano', 'Actuación de 90 Minutos'],
+        desc: "Este concierto reúne a cuatro voces excepcionales en un espectáculo poderoso y emocionante que combina los grandes clásicos con temas populares y contemporáneos. Acompañados por banda u orquesta sinfónica, los tenores crean una velada de enorme fuerza sonora, sensibilidad y belleza, capaz de emocionar desde el primer acorde. Un viaje musical que une tradición y modernidad, diseñado para impactar, conmover y dejar huella en el público. Un espectáculo diseñado para emocionar al público y convertir cada función en un éxito.",
+        features: ['Cuatro Tenores en un Concierto Excepcional', 'Repertorio Versátil con Orquesta Sinfónica', 'Una Experiencia Premium para el Público'],
         cta: "Reservar este Show"
       },
       unaNoche: {
@@ -131,8 +131,8 @@ const translations = {
         title: "Grand",
         subtitle: "Symphonic",
         tag: "Orchestral Masterpiece",
-        desc: "An immersive journey through the greatest operatic arias, accompanied by a full 60-piece symphony orchestra. This show combines the raw power of 'The Maravillosos Tenors' with lush orchestral arrangements.",
-        features: ['Full Orchestra Accompaniment', 'Classic Italian Repertoire', '90 Minute Performance'],
+        desc: "This concert brings together four exceptional voices in a powerful and moving show that blends great classics with popular and contemporary themes. Accompanied by a band or symphony orchestra, the tenors create an evening of immense sonic power, sensitivity and beauty, capable of moving audiences from the very first chord. A musical journey that unites tradition and modernity, designed to impact, move and leave a lasting impression. A show designed to thrill audiences and turn every performance into a success.",
+        features: ['Four Tenors in an Exceptional Concert', 'Versatile Repertoire with Symphony Orchestra', 'A Premium Experience for the Audience'],
         cta: "Book This Show"
       },
       unaNoche: {
