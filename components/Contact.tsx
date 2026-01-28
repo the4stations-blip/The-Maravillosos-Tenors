@@ -74,14 +74,15 @@ const Contact: React.FC = () => {
               />
             </motion.a>
 
-            <motion.div
-              initial={{ opacity: 0.6 }}
+            <motion.a
+              href="mailto:info@themaravillosostenors.es"
+              initial={{ opacity: 1 }}
               whileHover={{ opacity: 1, scale: 1.05 }}
-              className="mt-6 flex items-center justify-center gap-2 text-neon/80 text-[10px] md:text-xs tracking-[0.2em] font-bold uppercase cursor-pointer"
+              className="mt-6 flex items-center justify-center gap-2 text-white/90 text-[10px] md:text-xs tracking-[0.2em] font-bold uppercase cursor-pointer hover:text-neon transition-colors"
             >
-              <TouchAppIcon className="w-4 h-4 animate-pulse" />
+              <TouchAppIcon className="w-4 h-4 animate-pulse text-neon" />
               <span>{t('contact.clickAction')}</span>
-            </motion.div>
+            </motion.a>
 
             {/* Old hover hint removed in favor of permanent subtitle */}
           </div>
