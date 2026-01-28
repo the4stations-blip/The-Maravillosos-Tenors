@@ -61,16 +61,14 @@ const Navbar: React.FC = () => {
             onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
             whileHover="hover"
           >
-            <motion.span
+            <motion.img
+              src="/logo.png"
+              alt="The Maravillosos Tenors Logo"
               variants={{
-                hover: { scale: 1.1, rotate: [0, -10, 10, 0], transition: { duration: 0.5 } }
+                hover: { scale: 1.1, rotate: [0, -5, 5, 0], transition: { duration: 0.5 } }
               }}
-              className="text-white group-hover:text-neon transition-colors"
-            >
-              <svg className="w-6 h-6 md:w-7 md:h-7" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M7 18h2V6H7v12zm4-12v12h2V6h-2zm4 0v12h2V6h-2z" />
-              </svg>
-            </motion.span>
+              className="w-10 h-10 md:w-12 md:h-12 object-contain"
+            />
             <motion.span
               variants={{
                 hover: { tracking: '0.25em', opacity: 1 }
