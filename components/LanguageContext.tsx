@@ -49,12 +49,12 @@ const translations = {
         cta: "Reservar este Show"
       },
       unaNoche: {
-        label: "Una noche con",
-        title: "Una Noche",
-        subtitle: "Con Nosotros",
-        tag: "Velada Íntima",
-        desc: "Una sesión íntima y acústica diseñada para recintos exclusivos. Olvida la grandiosidad para revelar la belleza pura y sin adulterar de la voz humana. Acompañado solo por un piano de cola.",
-        features: ['Acompañamiento de Piano de Cola', 'Interacción con la Audiencia', 'Meet & Greet VIP Exclusivo'],
+        label: "Inolvidable",
+        title: "",
+        subtitle: "Inolvidable",
+        tag: "Experiencia Única",
+        desc: "Vive un viaje musical único donde la lírica se encuentra con los grandes éxitos de todos los tiempos: pop, tango, bolero, teatro musical, música latina y más. Un show elegante, emocionante y participativo que convierte al público en parte del espectáculo, creando recuerdos que duran para siempre. Haz que tu evento sea inolvidable.",
+        features: ['90 Minutos de Espectáculo Lleno de Emoción', 'Interacción con la Audiencia', 'Disponible con Tracks o Músicos en Directo'],
         cta: "Consultar Disponibilidad"
       },
       pasionLatina: {
@@ -136,12 +136,12 @@ const translations = {
         cta: "Book This Show"
       },
       unaNoche: {
-        label: "Una noche con",
-        title: "A Night",
-        subtitle: "With Us",
-        tag: "Intimate Evening",
-        desc: "An intimate, unplugged session designed for exclusive venues. Strip away the grandeur to reveal the pure, unadulterated beauty of the human voice. Accompanied only by a grand piano.",
-        features: ['Grand Piano Accompaniment', 'Audience Interaction', 'Exclusive VIP Meet & Greet'],
+        label: "Unforgettable",
+        title: "",
+        subtitle: "Unforgettable",
+        tag: "Unique Experience",
+        desc: "Experience a unique musical journey where lyrical artistry meets the greatest hits of all time: pop, tango, bolero, musical theater, Latin music and more. An elegant, exciting and participatory show that makes the audience part of the spectacle, creating memories that last forever. Make your event unforgettable.",
+        features: ['90 Minutes of Emotion-Filled Show', 'Audience Interaction', 'Available with Tracks or Live Musicians'],
         cta: "Inquire Availability"
       },
       pasionLatina: {
