@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
 
           <div className="group relative inline-block mb-16">
             <motion.a
-              href="mailto:themaravillosostenors@gmail.com"
+              href="mailto:info@themaravillosostenors.es"
               className="relative block font-serif text-[clamp(12px,4vw,2rem)] sm:text-2xl md:text-3xl lg:text-4xl text-white/90 transition-colors duration-500 hover:text-white whitespace-nowrap"
               whileHover="hover"
             >
@@ -61,7 +61,7 @@ const Contact: React.FC = () => {
                 }}
                 className="inline-block"
               >
-                themaravillosostenors@gmail.com
+                info@themaravillosostenors.es
               </motion.span>
 
               <motion.div
