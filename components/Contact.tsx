@@ -78,9 +78,9 @@ const Contact: React.FC = () => {
               href="mailto:info@themaravillosostenors.es"
               initial={{ opacity: 1 }}
               whileHover={{ opacity: 1, scale: 1.05 }}
-              className="mt-6 flex items-center justify-center gap-2 text-white/90 text-[10px] md:text-xs tracking-[0.2em] font-bold uppercase cursor-pointer hover:text-neon transition-colors"
+              className="mt-6 flex items-center justify-center gap-2 text-text-muted text-[10px] md:text-xs tracking-[0.2em] font-bold uppercase cursor-pointer hover:text-white transition-colors"
             >
-              <TouchAppIcon className="w-4 h-4 animate-pulse text-white" />
+              <TouchAppIcon className="w-4 h-4 animate-pulse" />
               <span>{t('contact.clickAction')}</span>
             </motion.a>
 
