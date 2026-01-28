@@ -58,12 +58,12 @@ const translations = {
         cta: "Consultar Disponibilidad"
       },
       pasionLatina: {
-        label: "Pasión latina",
+        label: "Pasión Latina",
         title: "Pasión",
         subtitle: "Latina",
         tag: "Ritmos Ardientes",
-        desc: "Una celebración vibrante de las baladas románticas y tangos latinoamericanos. Desde 'Bésame Mucho' hasta 'Granada', esta actuación energética fusiona la técnica operística con el fuego latino.",
-        features: ['Baladas Latinas y Boleros', 'Actuación de Alta Energía', 'Bailarines Opcionales'],
+        desc: "Un espectáculo único que recorre más de un siglo de las canciones más icónicas de la música latina: Bésame Mucho, Quizás Quizás, Contigo en la Distancia, Volver… y muchos más. Cada tema cobra vida con coreografías impactantes y la energía de dos grandes bailarines que fusionan canto y danza en números llenos de emoción y ritmo. Prepárate para bailar, emocionarte y disfrutar.",
+        features: ['Clásicos Latinos que Enamoran', 'Baile y Pasión en Escena', 'Adaptable a Todo Tipo de Eventos'],
         cta: "Ver Galería"
       },
       navidad: {
@@ -145,12 +145,12 @@ const translations = {
         cta: "Inquire Availability"
       },
       pasionLatina: {
-        label: "Pasión latina",
+        label: "Pasión Latina",
         title: "Pasión",
         subtitle: "Latina",
         tag: "Fiery Rhythms",
-        desc: "A vibrant celebration of Latin American romantic ballads and tangos. From 'Besame Mucho' to 'Granada', this energetic performance fuses operatic technique with Latin fire.",
-        features: ['Latin Ballads & Boleros', 'High Energy Performance', 'Optional Dancers'],
+        desc: "A unique show that spans over a century of the most iconic Latin music songs: Bésame Mucho, Quizás Quizás, Contigo en la Distancia, Volver… and many more. Each song comes to life with stunning choreography and the energy of two amazing dancers who blend singing and dancing in numbers full of emotion and rhythm. Get ready to dance, feel moved, and enjoy.",
+        features: ['Latin Classics that Captivate', 'Dance and Passion on Stage', 'Adaptable to All Types of Events'],
         cta: "View Gallery"
       },
       navidad: {
