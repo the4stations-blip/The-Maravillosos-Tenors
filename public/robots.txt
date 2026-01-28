@@ -1,0 +1,5 @@
+# robots.txt for The Maravillosos Tenors
+User-agent: *
+Allow: /
+
+Sitemap: https://themaravillosostenors.com/sitemap.xml
