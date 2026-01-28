@@ -80,7 +80,7 @@ const Contact: React.FC = () => {
               whileHover={{ opacity: 1, scale: 1.05 }}
               className="mt-6 flex items-center justify-center gap-2 text-white/90 text-[10px] md:text-xs tracking-[0.2em] font-bold uppercase cursor-pointer hover:text-neon transition-colors"
             >
-              <TouchAppIcon className="w-4 h-4 animate-pulse text-neon" />
+              <TouchAppIcon className="w-4 h-4 animate-pulse text-white" />
               <span>{t('contact.clickAction')}</span>
             </motion.a>
 
