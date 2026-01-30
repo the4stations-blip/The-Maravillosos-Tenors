@@ -34,7 +34,8 @@ const Shows: React.FC = () => {
         desc: t('shows.unaNoche.desc'),
         features: t('shows.unaNoche.features'),
         cta: t('shows.unaNoche.cta'),
-        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBClwy6TkHwFHU7MJWxOslggiZYFiXz79SHx1egYPs3VdkJ0tpJcsVzndIluPfwDFSdMfKD_3uOqhffLdYEQ2WYRmbZgcPc1FEXKjuWysqx2oByDedabRIou5t3VpRISBz5E4hmYyyhY3ozgjisPXVHMXbZhJb0E1PmMYCOQdgShEjr0GH7mrwmffvcXBFNdFw5MpmiEgDsZTC8_jty21tQFMADScA4Nz5py2AEMpKEHGiCmZG7CDO6RNY1CF1PIbzq1zhx69GRcvy8'
+        image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBClwy6TkHwFHU7MJWxOslggiZYFiXz79SHx1egYPs3VdkJ0tpJcsVzndIluPfwDFSdMfKD_3uOqhffLdYEQ2WYRmbZgcPc1FEXKjuWysqx2oByDedabRIou5t3VpRISBz5E4hmYyyhY3ozgjisPXVHMXbZhJb0E1PmMYCOQdgShEjr0GH7mrwmffvcXBFNdFw5MpmiEgDsZTC8_jty21tQFMADScA4Nz5py2AEMpKEHGiCmZG7CDO6RNY1CF1PIbzq1zhx69GRcvy8',
+        videoEmbedId: 'v0ZhK_6vLhY'
       };
       case 'pasion-latina': return {
         label: t('shows.pasionLatina.label'),
