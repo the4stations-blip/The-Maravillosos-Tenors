@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { LanguageProvider } from './components/LanguageContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -13,6 +13,13 @@ import ScrollToTop from './components/ScrollToTop';
 import LogoMarquee from './components/LogoMarquee';
 
 const App: React.FC = () => {
+  useEffect(() => {
+    // Forzar scroll arriba al cargar, ignorando la restauración del navegador
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <LanguageProvider>
       <div className="min-h-screen bg-dark">
