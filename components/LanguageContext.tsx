@@ -41,7 +41,7 @@ const translations = {
       shared: "¡Copiado!",
       sinfonico: {
         label: "Sinfónico",
-        title: "Gran",
+        title: "",
         subtitle: "Sinfónico",
         tag: "Obra Maestra Orquestal",
         desc: "Este concierto reúne a cuatro voces excepcionales en un espectáculo poderoso y emocionante que combina los grandes clásicos con temas populares y contemporáneos. Acompañados por banda u orquesta sinfónica, los tenores crean una velada de enorme fuerza sonora, sensibilidad y belleza, capaz de emocionar desde el primer acorde. Un viaje musical que une tradición y modernidad, diseñado para impactar, conmover y dejar huella en el público. Un espectáculo diseñado para emocionar al público y convertir cada función en un éxito.",
@@ -68,7 +68,7 @@ const translations = {
       },
       navidad: {
         label: "Concierto Navidad",
-        title: "Especial de",
+        title: "Concierto de",
         subtitle: "Navidad",
         tag: "Especial Festivo",
         desc: "¡Vive la Navidad como nunca antes! Adeste Fideles, Noche de Paz, Oh Holy Night, Blanca Navidad, Hallelujah… y mucho más. Con voces impresionantes, presencia arrolladora y una puesta en escena única, te harán sentir la magia de los villancicos clásicos y grandes éxitos en un concierto elegante, emocionante y totalmente interactivo. Una experiencia memorable que transformará tus fiestas en momentos mágicos. ¡No te lo puedes perder!",
@@ -131,7 +131,7 @@ const translations = {
       shared: "Copied!",
       sinfonico: {
         label: "Sinfónico",
-        title: "Grand",
+        title: "",
         subtitle: "Symphonic",
         tag: "Orchestral Masterpiece",
         desc: "This concert brings together four exceptional voices in a powerful and moving show that blends great classics with popular and contemporary themes. Accompanied by a band or symphony orchestra, the tenors create an evening of immense sonic power, sensitivity and beauty, capable of moving audiences from the very first chord. A musical journey that unites tradition and modernity, designed to impact, move and leave a lasting impression. A show designed to thrill audiences and turn every performance into a success.",
@@ -159,7 +159,7 @@ const translations = {
       navidad: {
         label: "Christmas Concert",
         title: "Christmas",
-        subtitle: "Spectacular",
+        subtitle: "Concert",
         tag: "Holiday Special",
         desc: "Experience Christmas like never before! Adeste Fideles, Silent Night, Oh Holy Night, White Christmas, Hallelujah… and much more. With impressive voices, overwhelming presence and a unique staging, they will make you feel the magic of classic carols and greatest hits in an elegant, exciting and totally interactive concert. A memorable experience that will transform your holidays into magical moments. Don't miss it!",
         features: ['Available for Christmas Light-Up Events', 'Live Christmas Magic', 'A Show for the Whole Family'],

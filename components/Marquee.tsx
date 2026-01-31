@@ -21,13 +21,13 @@ const Marquee: React.FC = () => {
       <div className="absolute right-0 top-0 bottom-0 w-48 md:w-96 bg-gradient-to-l from-dark via-dark/80 to-transparent z-10 pointer-events-none"></div>
 
       <div className="flex whitespace-nowrap animate-marquee-liquid w-max opacity-90 hover:opacity-100 transition-opacity duration-1000">
-        <div className="flex items-center gap-16 md:gap-32 px-12">
+        <div className="flex items-center gap-12 md:gap-24 px-12">
           {marqueeItems.map((city, idx) => (
             <div
               key={`${city}-${idx}`}
-              className="flex items-center gap-16 md:gap-32"
+              className="flex items-center gap-12 md:gap-24"
             >
-              <span className="text-4xl md:text-8xl font-serif tracking-tight text-white transition-all duration-700 hover:text-neon/80">
+              <span className="text-2xl md:text-5xl font-serif tracking-tight text-white transition-all duration-700 hover:text-neon/80">
                 {city}
               </span>
 
