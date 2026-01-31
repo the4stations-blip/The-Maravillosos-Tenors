@@ -16,13 +16,13 @@ const SinfoniaVisual: React.FC = () => {
 
   // Intercalando Reel - Video - Reel - Video...
   const mediaItems: MediaItem[] = [
-    { type: 'instagram', id: 'DH9DtZytr64', title: 'Performance Reel 1' },
-    { type: 'youtube', id: 'irF2lHkQAAM', title: 'Live Performance 1' },
-    { type: 'instagram', id: 'DHq48h3t3PM', title: 'Performance Reel 2' },
-    { type: 'youtube', id: '-RnIrqxrwZk', title: 'Live Performance 2' },
-    { type: 'instagram', id: 'DGjHRzfty1K', title: 'Performance Reel 3' },
+    { type: 'instagram', id: 'DH9DtZytr64', title: 'A mi manera' },
+    { type: 'youtube', id: '-RnIrqxrwZk', title: 'Live Performance 1' },
+    { type: 'instagram', id: 'DHq48h3t3PM', title: 'Música que se siente y se baila' },
+    { type: 'youtube', id: 'irF2lHkQAAM', title: 'TMT - SHOWREEL INOLVIDABLE SHOW' },
+    { type: 'instagram', id: 'DGjHRzfty1K', title: '¿Quién será la que me quiera a mí?' },
     { type: 'youtube', id: 'KqlXxnAjbcA', title: 'Live Performance 3' },
-    { type: 'instagram', id: 'DGabMKEtNBm', title: 'Performance Reel 4' },
+    { type: 'instagram', id: 'DGabMKEtNBm', title: 'Cada nota, una historia🎶' },
   ];
 
   const handleScroll = (dir: 'left' | 'right') => {
@@ -81,7 +81,10 @@ const SinfoniaVisual: React.FC = () => {
             {mediaItems.map((item, idx) => (
               <div
                 key={`${item.type}-${item.id}`}
-                className="snap-center shrink-0 h-full w-[320px] md:w-[400px] relative group cursor-pointer overflow-hidden rounded-lg bg-dark-surface border border-white/5 hover:border-neon/30 transition-all duration-500"
+                className={`snap-center shrink-0 h-full relative group cursor-pointer overflow-hidden rounded-lg bg-dark-surface border border-white/5 hover:border-neon/30 transition-all duration-500 ${item.type === 'instagram'
+                  ? 'w-[253px] md:w-[281px]'  // 9:16 aspect ratio (height 450/500 * 9/16)
+                  : 'w-[533px] md:w-[590px]'  // 16:9 aspect ratio (height 450/500 * 16/9)
+                  }`}
                 onClick={() => handleMediaClick(item)}
               >
                 {/* Thumbnail */}
