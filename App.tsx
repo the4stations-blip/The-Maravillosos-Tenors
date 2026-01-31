@@ -4,8 +4,8 @@ import { LanguageProvider } from './components/LanguageContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Marquee from './components/Marquee';
-import Repertoire from './components/Repertoire';
-import Shows from './components/Shows';
+import SinfoniaVisual from './components/SinfoniaVisual';
+import NuestrosShows from './components/NuestrosShows';
 import Tenors from './components/Tenors';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -19,8 +19,8 @@ const App: React.FC = () => {
         <Navbar />
         <Hero />
         <Marquee />
-        <Repertoire />
-        <Shows />
+        <SinfoniaVisual />
+        <NuestrosShows />
         <Tenors />
         <LogoMarquee />
         <Contact />

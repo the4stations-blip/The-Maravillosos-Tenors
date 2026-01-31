@@ -6,7 +6,7 @@ import { CheckCircleIcon, ArrowForwardIcon, ShareIcon } from './Icons';
 
 type TabId = 'sinfonico' | 'una-noche' | 'pasion-latina' | 'navidad';
 
-const Shows: React.FC = () => {
+const NuestrosShows: React.FC = () => {
   const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState<TabId>('sinfonico');
   const [isShared, setIsShared] = useState(false);
@@ -265,4 +265,4 @@ const Shows: React.FC = () => {
   );
 };
 
-export default Shows;
+export default NuestrosShows;
