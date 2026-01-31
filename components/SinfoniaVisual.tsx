@@ -17,8 +17,8 @@ const SinfoniaVisual: React.FC = () => {
 
   // Intercalando Reel - Video - Reel - Video...
   const mediaItems: MediaItem[] = [
-    { type: 'instagram', id: 'DH9DtZytr64', title: 'A mi manera', thumbnail: '/reel-1.jpg' },
     { type: 'youtube', id: 'irF2lHkQAAM', title: 'TMT - SHOWREEL INOLVIDABLE SHOW' },
+    { type: 'instagram', id: 'DH9DtZytr64', title: 'A mi manera', thumbnail: '/reel-1.jpg' },
     { type: 'instagram', id: 'DHq48h3t3PM', title: 'Música que se siente y se baila', thumbnail: '/pasion-latina-thumb.jpg' },
     { type: 'youtube', id: '-RnIrqxrwZk', title: 'CONCIERTO SINFÓNICO TENORES (En Vivo)' },
     { type: 'instagram', id: 'DGjHRzfty1K', title: '¿Quién será la que me quiera a mí?', thumbnail: '/reel-5.jpg' },

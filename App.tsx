@@ -26,8 +26,8 @@ const App: React.FC = () => {
         <Navbar />
         <Hero />
         <Marquee />
-        <SinfoniaVisual />
         <NuestrosShows />
+        <SinfoniaVisual />
         <Tenors />
         <LogoMarquee />
         <Contact />
