@@ -1,6 +1,4 @@
-
-
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useLanguage } from './LanguageContext';
 import { ArrowBackIcon, ArrowForwardIcon } from './Icons';
 
@@ -10,9 +8,34 @@ const Tenors: React.FC = () => {
 
   const [selectedArtist, setSelectedArtist] = useState<{ name: string, voice: string, bio: string, image: string } | null>(null);
 
+  // Manejo del historial para cerrar modal con botón atrás
+  useEffect(() => {
+    if (selectedArtist) {
+      // Al abrir el modal, añadimos una entrada al historial
+      window.history.pushState({ modalOpen: true }, '', window.location.href);
+
+      const handlePopState = () => {
+        // Al pulsar atrás, cerramos el modal
+        setSelectedArtist(null);
+      };
+
+      window.addEventListener('popstate', handlePopState);
+
+      return () => {
+        window.removeEventListener('popstate', handlePopState);
+      };
+    }
+  }, [selectedArtist]);
+
+  const closeModal = () => {
+    // Para cerrar manualmente, volvemos atrás en el historial
+    // Esto disparará el evento popstate que cerrará el modal
+    window.history.back();
+  };
+
   const artistData = [
     {
-      name: "Iván Nieto",
+      name: "Iván Nieto-Balboa",
       voice: t('tenors.profiles.ivan.voice'),
       bio: t('tenors.profiles.ivan.bio'),
       image: "/tenor-ivan.jpg"
@@ -88,7 +111,7 @@ const Tenors: React.FC = () => {
                 <div className="absolute inset-0 z-0 bg-dark-surface">
                   <img
                     alt={artist.name}
-                    className="w-full h-full object-cover transition-all duration-1000 ease-out md:group-hover:scale-105"
+                    className="w-full h-full object-cover object-top transition-all duration-1000 ease-out md:group-hover:scale-105"
                     src={artist.image}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-90 transition-opacity duration-700"></div>
@@ -127,7 +150,7 @@ const Tenors: React.FC = () => {
       {selectedArtist && (
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
-          onClick={() => setSelectedArtist(null)}
+          onClick={closeModal}
         >
           <div
             className="bg-dark-surface border border-white/10 rounded-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col md:flex-row shadow-2xl relative"
@@ -136,7 +159,7 @@ const Tenors: React.FC = () => {
             {/* Close Button */}
             <button
               className="absolute top-4 right-4 z-20 text-white/50 hover:text-white p-2 rounded-full bg-black/20 hover:bg-black/40 transition-colors"
-              onClick={() => setSelectedArtist(null)}
+              onClick={closeModal}
             >
               <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -148,7 +171,7 @@ const Tenors: React.FC = () => {
               <img
                 src={selectedArtist.image}
                 alt={selectedArtist.name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark-surface via-transparent to-transparent md:bg-gradient-to-r"></div>
             </div>

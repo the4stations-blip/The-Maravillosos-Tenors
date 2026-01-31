@@ -8,7 +8,7 @@ const Hero: React.FC = () => {
   const { scrollY } = useScroll();
 
   // Background parallax
-  const yBg = useTransform(scrollY, [0, 800], [0, 240]);
+  const yBg = useTransform(scrollY, [0, 800], [0, 400]);
   const scaleBg = useTransform(scrollY, [0, 800], [1.15, 1.0]);
   const opacityBg = useTransform(scrollY, [0, 500], [1, 0.3]);
 
@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
       {/* Parallax Background Container */}
       <motion.div
         style={{ y: yBg, scale: scaleBg, opacity: opacityBg }}
-        className="absolute inset-0 z-0 origin-center"
+        className="absolute inset-0 z-0 origin-top"
       >
         <div className="absolute inset-0 bg-dark/40 z-10"></div>
         <motion.div
