@@ -10,6 +10,7 @@ import Tenors from './components/Tenors';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import LogoMarquee from './components/LogoMarquee';
 
 const App: React.FC = () => {
   return (
@@ -21,6 +22,7 @@ const App: React.FC = () => {
         <Repertoire />
         <Shows />
         <Tenors />
+        <LogoMarquee />
         <Contact />
         <Footer />
         <ScrollToTop />
