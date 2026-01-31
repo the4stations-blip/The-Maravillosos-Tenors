@@ -80,7 +80,10 @@ const translations = {
       title: "Los Tenores",
       tagline: "Descubre a los artistas",
       profiles: {
-        alessandro: { voice: "Tenor Dramático", bio: "Conocido por su imponente presencia escénica y una voz que lleva el peso de la tragedia y el triunfo." },
+        ivan: {
+          voice: "El Lírico",
+          bio: "Su formación vocal comenzó bajo la guía de la reconocida profesora María Luisa Castellanos, con quien desarrolló las bases del canto lírico. Posteriormente, continuó su perfeccionamiento técnico y estilístico junto al tenor Juan Lomba, profundizando en el repertorio operístico. En la actualidad, amplía su formación orientada al teatro musical con el maestro José Masegosa. Ha participado en numerosos montajes tanto líricos como musicales, destacando su papel del Marqués D’Obigny en la ópera La Traviata y su participación en la Antología de la Zarzuela, interpretando los protagonistas en El barberillo de Lavapiés, Caballero de Gracia La Gran Vía, La verbena de la Paloma y La Revoltosa. Entre sus trabajos figuran también Edipo Rey en el Festival de Teatro Clásico de Mérida, El hombre de La Mancha en el Teatro Calderón de Madrid, La Verbena de La Paloma en el Teatro de la Zarzuela, La rosa del azafrán, El Barbero de Sevilla, Bohemios, La Generala, Doña Francisquita, Luisa Fernanda, etc. En teatro musical ha participado en montajes como West Side Story, Los Miserables, La magia de Broadway y Peter Pan, dirigidos por reconocidos directores como Alfredo Lomas o César Belda."
+        },
         matteo: { voice: "Tenor Lírico", bio: "Poseedor de un tono de puro terciopelo, Matteo aporta una sensibilidad poética al repertorio del bel canto." },
         luca: { voice: "Tenor Spinto", bio: "Con una voz que atraviesa la orquestación más densa, Luca es la encarnación de la pasión del verismo." },
         giovanni: { voice: "Contratenor", bio: "Raro y etéreo, el rango de Giovanni desafía las expectativas, uniendo la innovación barroca y contemporánea." }
@@ -167,7 +170,10 @@ const translations = {
       title: "The Tenors",
       tagline: "Discover the artists",
       profiles: {
-        alessandro: { voice: "Dramatic Tenor", bio: "Known for his commanding stage presence and a voice that carries the weight of tragedy and triumph." },
+        ivan: {
+          voice: "El Lírico",
+          bio: "Su formación vocal comenzó bajo la guía de la reconocida profesora María Luisa Castellanos, con quien desarrolló las bases del canto lírico. Posteriormente, continuó su perfeccionamiento técnico y estilístico junto al tenor Juan Lomba, profundizando en el repertorio operístico. En la actualidad, amplía su formación orientada al teatro musical con el maestro José Masegosa. Ha participado en numerosos montajes tanto líricos como musicales, destacando su papel del Marqués D’Obigny en la ópera La Traviata y su participación en la Antología de la Zarzuela..."
+        },
         matteo: { voice: "Lyric Tenor", bio: "Possessing a tone of pure velvet, Matteo brings a poetic sensibility to the bel canto repertoire." },
         luca: { voice: "Spinto Tenor", bio: "With a voice that cuts through the thickest orchestration, Luca is the embodiment of verismo passion." },
         giovanni: { voice: "Countertenor", bio: "Rare and ethereal, Giovanni's range defies expectations, bridging baroque and contemporary innovation." }
