@@ -2,7 +2,7 @@
 import React from 'react';
 import { useLanguage } from './LanguageContext';
 import { motion } from 'framer-motion';
-import { MailIcon, TouchAppIcon, PhoneIcon } from './Icons';
+import { MailIcon, TouchAppIcon, PhoneIcon, WhatsAppIcon } from './Icons';
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();
@@ -66,28 +66,37 @@ const Contact: React.FC = () => {
           <div className="flex flex-col gap-4 max-w-2xl mx-auto mb-16 w-full">
 
             {/* Primary Phone - Hero Action */}
-            <motion.a
-              href={`tel:${phones.primary.clean}`}
-              className="group relative flex items-center justify-between p-1 bg-gradient-to-r from-neon/20 to-neon/5 rounded-full border border-neon/50 hover:border-neon transition-all duration-300 shadow-[0_0_20px_rgba(75,92,160,0.15)] hover:shadow-[0_0_30px_rgba(75,92,160,0.3)] w-full overflow-hidden"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <div className="absolute inset-0 bg-neon/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="group relative flex items-center justify-between p-1 bg-gradient-to-r from-neon/20 to-neon/5 rounded-full border border-neon/50 hover:border-neon transition-all duration-300 shadow-[0_0_20px_rgba(75,92,160,0.15)] hover:shadow-[0_0_30px_rgba(75,92,160,0.3)] w-full overflow-hidden">
+              <div className="absolute inset-0 bg-neon/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
-              <div className="flex items-center gap-4 pl-1">
+              {/* Left: Call Action */}
+              <motion.a
+                href={`tel:${phones.primary.clean}`}
+                className="flex-1 flex items-center gap-4 pl-1 min-w-0 py-2 group-inner cursor-pointer"
+                whileTap={{ scale: 0.98 }}
+              >
                 <div className="flex-shrink-0 size-12 rounded-full bg-neon text-dark flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                   <PhoneIcon className="w-5 h-5" />
                 </div>
-                <div className="text-left flex flex-col justify-center h-full py-2">
-                  <span className="text-[10px] uppercase tracking-widest text-neon font-bold mb-0.5">Booking & Management</span>
-                  <span className="font-serif text-xl md:text-2xl text-white leading-none pb-0.5">{phones.primary.number}</span>
+                <div className="flex-1 text-center pr-12">
+                  <span className="block text-[10px] uppercase tracking-widest text-neon font-bold mb-0.5">Booking & Management</span>
+                  <span className="font-serif text-xl md:text-2xl text-white leading-none pb-0.5 whitespace-nowrap">{phones.primary.number}</span>
                 </div>
-              </div>
+              </motion.a>
 
-              <div className="pr-6 text-neon/50 group-hover:text-neon transform group-hover:translate-x-1 transition-all duration-300">
-                <TouchAppIcon className="w-5 h-5" />
-              </div>
-            </motion.a>
+              {/* Right: WhatsApp Action */}
+              <motion.a
+                href={`https://wa.me/${phones.primary.clean.replace('+', '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-shrink-0 mr-1 size-10 rounded-full bg-white/5 hover:bg-[#25D366] text-white/50 hover:text-white flex items-center justify-center transition-all duration-300 z-10"
+                whileHover={{ scale: 1.1, rotate: 10 }}
+                whileTap={{ scale: 0.9 }}
+                aria-label="Chat on WhatsApp"
+              >
+                <WhatsAppIcon className="w-5 h-5" />
+              </motion.a>
+            </div>
 
             <div className="flex flex-col gap-4">
               {/* Secondary Phone */}
@@ -100,13 +109,13 @@ const Contact: React.FC = () => {
                 <div className="flex-shrink-0 size-10 rounded-full bg-white/5 text-text-muted flex items-center justify-center group-hover:text-white transition-colors">
                   <PhoneIcon className="w-4 h-4" />
                 </div>
-                <div className="text-left">
+                <div className="flex-1 text-center pr-10">
                   <span className="block text-[9px] uppercase tracking-wider text-text-muted group-hover:text-white/70 transition-colors">Línea Alternativa</span>
                   <span className="font-serif text-lg text-white/90 group-hover:text-white transition-colors">{phones.secondary.number}</span>
                 </div>
               </motion.a>
 
-              {/* Email Button - Standardized */}
+              {/* Email Button */}
               <motion.a
                 href="mailto:info@themaravillosostenors.es"
                 className="group flex items-center gap-3 p-4 bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 rounded-2xl transition-all duration-300"
@@ -116,13 +125,12 @@ const Contact: React.FC = () => {
                 <div className="flex-shrink-0 size-10 rounded-full bg-white/5 text-text-muted flex items-center justify-center group-hover:text-white transition-colors">
                   <MailIcon className="w-4 h-4" />
                 </div>
-                <div className="text-left overflow-hidden">
+                <div className="flex-1 text-center pr-10 overflow-hidden">
                   <span className="block text-[9px] uppercase tracking-wider text-text-muted group-hover:text-white/70 transition-colors">Consultas Generales</span>
                   <span className="font-serif text-sm md:text-base text-white/90 group-hover:text-white transition-colors truncate block">info@themaravillosostenors.es</span>
                 </div>
               </motion.a>
             </div>
-
           </div>
 
           {/* Social Links Separator */}
