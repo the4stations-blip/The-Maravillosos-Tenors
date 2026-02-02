@@ -104,7 +104,7 @@ const translations = {
       desc: "Para eventos distinguidos que requieran una atmósfera de elegancia inigualable.",
       copy: "Click para contactar",
       clickAction: "PULSA EL CORREO PARA CONTACTAR",
-      bookingLabel: "Contratación y Gestión",
+      bookingLabel: "Contratación y Representación",
       altPhoneLabel: "Línea Alternativa",
       generalInquiriesLabel: "Consultas Generales",
       followUs: "Síguenos"
