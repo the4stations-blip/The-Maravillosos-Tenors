@@ -72,15 +72,15 @@ const Contact: React.FC = () => {
               {/* Left: Call Action */}
               <motion.a
                 href={`tel:${phones.primary.clean}`}
-                className="flex-1 flex items-center gap-4 pl-1 min-w-0 py-2 group-inner cursor-pointer"
+                className="flex-1 flex items-center gap-2 md:gap-4 pl-1 min-w-0 py-2 group-inner cursor-pointer"
                 whileTap={{ scale: 0.98 }}
               >
-                <div className="flex-shrink-0 size-12 rounded-full bg-neon text-dark flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <PhoneIcon className="w-5 h-5" />
+                <div className="flex-shrink-0 size-10 md:size-12 rounded-full bg-neon text-dark flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <PhoneIcon className="w-4 h-4 md:w-5 md:h-5" />
                 </div>
-                <div className="flex-1 text-center pr-12">
-                  <span className="block text-[10px] uppercase tracking-widest text-neon font-bold mb-0.5">{t('contact.bookingLabel')}</span>
-                  <span className="font-serif text-xl md:text-2xl text-white leading-none pb-0.5 whitespace-nowrap">{phones.primary.number}</span>
+                <div className="flex-1 text-center pr-2 md:pr-12 min-w-0">
+                  <span className="block text-[8px] md:text-[10px] uppercase tracking-widest text-neon font-bold mb-0.5 truncate">{t('contact.bookingLabel')}</span>
+                  <span className="font-serif text-lg md:text-2xl text-white leading-none pb-0.5 whitespace-nowrap">{phones.primary.number}</span>
                 </div>
               </motion.a>
 
@@ -89,29 +89,28 @@ const Contact: React.FC = () => {
                 href={`https://wa.me/${phones.primary.clean.replace('+', '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-shrink-0 mr-1 size-10 rounded-full bg-white/10 hover:bg-[#25D366] text-white/50 hover:text-white flex items-center justify-center transition-all duration-300 z-10"
+                className="flex-shrink-0 mr-1 size-8 md:size-10 rounded-full bg-white/10 hover:bg-[#25D366] text-white/50 hover:text-white flex items-center justify-center transition-all duration-300 z-10"
                 whileHover={{ scale: 1.1, rotate: 10 }}
                 whileTap={{ scale: 0.9 }}
                 aria-label="Chat on WhatsApp"
               >
-                <WhatsAppIcon className="w-5 h-5" />
+                <WhatsAppIcon className="w-4 h-4 md:w-5 md:h-5" />
               </motion.a>
             </div>
 
             <div className="flex flex-col gap-4">
               {/* Secondary Phone */}
-              {/* Secondary Phone */}
               <div className="group flex items-center justify-between p-1 bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 rounded-2xl transition-all duration-300">
                 <motion.a
                   href={`tel:${phones.secondary.clean}`}
-                  className="flex-1 flex items-center gap-3 p-3 min-w-0"
+                  className="flex-1 flex items-center gap-3 p-2 md:p-3 min-w-0"
                   whileTap={{ scale: 0.98 }}
                 >
-                  <div className="flex-shrink-0 size-10 rounded-full bg-white/5 text-text-muted flex items-center justify-center group-hover:text-white transition-colors">
-                    <PhoneIcon className="w-4 h-4" />
+                  <div className="flex-shrink-0 size-8 md:size-10 rounded-full bg-white/5 text-text-muted flex items-center justify-center group-hover:text-white transition-colors">
+                    <PhoneIcon className="w-3 h-3 md:w-4 md:h-4" />
                   </div>
-                  <div className="flex-1 text-center pr-10">
-                    <span className="font-serif text-lg text-white/90 group-hover:text-white transition-colors">{phones.secondary.number}</span>
+                  <div className="flex-1 text-center pr-2 md:pr-10">
+                    <span className="font-serif text-base md:text-lg text-white/90 group-hover:text-white transition-colors whitespace-nowrap">{phones.secondary.number}</span>
                   </div>
                 </motion.a>
 
@@ -119,26 +118,27 @@ const Contact: React.FC = () => {
                   href={`https://wa.me/${phones.secondary.clean.replace('+', '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-shrink-0 mr-1 size-10 rounded-full bg-white/10 hover:bg-[#25D366] text-white/50 hover:text-white flex items-center justify-center transition-all duration-300"
+                  className="flex-shrink-0 mr-1 size-8 md:size-10 rounded-full bg-white/10 hover:bg-[#25D366] text-white/50 hover:text-white flex items-center justify-center transition-all duration-300"
                   whileHover={{ scale: 1.1, rotate: 10 }}
                   whileTap={{ scale: 0.9 }}
                   aria-label="Chat on WhatsApp"
                 >
-                  <WhatsAppIcon className="w-5 h-5" />
+                  <WhatsAppIcon className="w-4 h-4 md:w-5 md:h-5" />
                 </motion.a>
               </div>
 
               {/* Email Button */}
               <motion.a
                 href="mailto:info@themaravillosostenors.es"
-                className="group flex items-center gap-3 p-4 bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 rounded-2xl transition-all duration-300"
+                className="group flex items-center gap-3 p-3 md:p-4 bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 rounded-2xl transition-all duration-300"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <div className="flex-shrink-0 size-10 rounded-full bg-white/5 text-text-muted flex items-center justify-center group-hover:text-white transition-colors">
-                  <MailIcon className="w-4 h-4" />
+                <div className="flex-shrink-0 size-8 md:size-10 rounded-full bg-white/5 text-text-muted flex items-center justify-center group-hover:text-white transition-colors">
+                  <MailIcon className="w-3 h-3 md:w-4 md:h-4" />
                 </div>
-                <div className="flex-1 text-center pr-10 overflow-hidden">
+                <div className="flex-1 text-center pr-2 md:pr-10 overflow-hidden">
+
                   <span className="block text-[9px] uppercase tracking-wider text-text-muted group-hover:text-white/70 transition-colors">{t('contact.generalInquiriesLabel')}</span>
                   <span className="font-serif text-sm md:text-base text-white/90 group-hover:text-white transition-colors truncate block">info@themaravillosostenors.es</span>
                 </div>
