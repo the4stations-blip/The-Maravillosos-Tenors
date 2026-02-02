@@ -52,80 +52,91 @@ const Contact: React.FC = () => {
     <section className="relative py-32 bg-dark flex items-center justify-center overflow-hidden" id="contact">
       <div className="container max-w-[900px] mx-auto px-6 relative z-10">
         <div className="glass-card rounded-[2rem] p-12 md:p-24 text-center transform hover:scale-[1.01] transition-transform duration-700">
-          <div className="inline-flex items-center justify-center p-4 rounded-full bg-white/5 border border-white/10 mb-10 text-neon shadow-[0_0_30px_rgba(75,92,160,0.2)]">
+          <div className="inline-flex items-center justify-center p-4 rounded-full bg-white/5 border border-white/10 mb-8 text-neon shadow-[0_0_30px_rgba(75,92,160,0.2)]">
             <MailIcon className="w-8 h-8" />
           </div>
-          <h2 className="font-serif text-4xl md:text-5xl text-white mb-6 engraved-text">{t('contact.title')}</h2>
-          <p className="text-text-muted mb-12 max-w-md mx-auto leading-relaxed">
-            {t('contact.desc')}
-          </p>
 
-          <div className="flex flex-col items-center gap-10 mb-16">
-            {/* Teléfonos with Hierarchy */}
-            <div className="flex flex-col items-center gap-6 w-full">
-              {/* Primary Phone */}
-              <motion.a
-                href={`tel:${phones.primary.clean}`}
-                className="group relative flex items-center gap-5 px-8 py-5 bg-white/5 hover:bg-white/10 border border-neon/30 hover:border-neon rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(75,92,160,0.1)] hover:shadow-[0_0_30px_rgba(75,92,160,0.4)] w-full md:w-auto min-w-[320px] justify-center cursor-pointer"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <div className="p-3 bg-neon/10 rounded-full text-neon group-hover:bg-neon group-hover:text-black transition-all duration-300">
-                  <PhoneIcon className="w-6 h-6" />
-                </div>
-                <div className="flex flex-col items-start">
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-text-muted group-hover:text-neon transition-colors font-bold mb-1">Booking & Management</span>
-                  <span className="text-xl md:text-2xl font-serif text-white tracking-wide group-hover:text-white transition-colors">{phones.primary.number}</span>
-                </div>
-                <div className="absolute right-6 opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1 text-neon">
-                  <TouchAppIcon className="w-5 h-5" />
-                </div>
-              </motion.a>
+          <div className="text-center mb-12">
+            <h2 className="font-serif text-4xl md:text-5xl text-white mb-4 engraved-text">{t('contact.title')}</h2>
+            <p className="text-text-muted max-w-md mx-auto leading-relaxed text-sm md:text-base">
+              {t('contact.desc')}
+            </p>
+          </div>
 
+          <div className="flex flex-col gap-4 max-w-lg mx-auto mb-16 w-full">
+
+            {/* Primary Phone - Hero Action */}
+            <motion.a
+              href={`tel:${phones.primary.clean}`}
+              className="group relative flex items-center justify-between p-1 bg-gradient-to-r from-neon/20 to-neon/5 rounded-full border border-neon/50 hover:border-neon transition-all duration-300 shadow-[0_0_20px_rgba(75,92,160,0.15)] hover:shadow-[0_0_30px_rgba(75,92,160,0.3)] w-full overflow-hidden"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <div className="absolute inset-0 bg-neon/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+              <div className="flex items-center gap-4 pl-1">
+                <div className="flex-shrink-0 size-12 rounded-full bg-neon text-dark flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                  <PhoneIcon className="w-5 h-5" />
+                </div>
+                <div className="text-left flex flex-col justify-center h-full py-2">
+                  <span className="text-[10px] uppercase tracking-widest text-neon font-bold mb-0.5">Booking & Management</span>
+                  <span className="font-serif text-xl md:text-2xl text-white leading-none pb-0.5">{phones.primary.number}</span>
+                </div>
+              </div>
+
+              <div className="pr-6 text-neon/50 group-hover:text-neon transform group-hover:translate-x-1 transition-all duration-300">
+                <TouchAppIcon className="w-5 h-5" />
+              </div>
+            </motion.a>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* Secondary Phone */}
               <motion.a
                 href={`tel:${phones.secondary.clean}`}
-                className="group flex items-center gap-3 px-6 py-2 text-white/40 hover:text-white transition-colors"
-                whileHover={{ x: 2 }}
+                className="group flex items-center gap-3 p-4 bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 rounded-2xl transition-all duration-300"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <PhoneIcon className="w-4 h-4" />
-                <span className="text-sm tracking-wider font-light">{phones.secondary.number}</span>
+                <div className="flex-shrink-0 size-10 rounded-full bg-white/5 text-text-muted flex items-center justify-center group-hover:text-white transition-colors">
+                  <PhoneIcon className="w-4 h-4" />
+                </div>
+                <div className="text-left">
+                  <span className="block text-[9px] uppercase tracking-wider text-text-muted group-hover:text-white/70 transition-colors">Línea Alternativa</span>
+                  <span className="font-serif text-lg text-white/90 group-hover:text-white transition-colors">{phones.secondary.number}</span>
+                </div>
               </motion.a>
-            </div>
 
-            <div className="w-32 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-
-            <div className="group relative inline-block">
+              {/* Email Button - Standardized */}
               <motion.a
                 href="mailto:info@themaravillosostenors.es"
-                className="relative block font-serif text-[clamp(12px,4vw,2rem)] sm:text-2xl md:text-3xl lg:text-4xl text-white/90 transition-colors duration-500 hover:text-white whitespace-nowrap"
-                whileHover="hover"
+                className="group flex items-center gap-3 p-4 bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 rounded-2xl transition-all duration-300"
+                whileHover={{ y: -2 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <motion.span
-                  variants={{
-                    hover: { y: -5, textShadow: "0 0 20px rgba(75, 92, 160, 0.8)" }
-                  }}
-                  className="inline-block"
-                >
-                  info@themaravillosostenors.es
-                </motion.span>
-                <motion.div
-                  className="absolute -bottom-2 left-0 h-[1px] bg-neon"
-                  initial={{ width: 0 }}
-                  variants={{
-                    hover: { width: '100%' }
-                  }}
-                  transition={{ duration: 0.4, ease: "circOut" }}
-                />
+                <div className="flex-shrink-0 size-10 rounded-full bg-white/5 text-text-muted flex items-center justify-center group-hover:text-white transition-colors">
+                  <MailIcon className="w-4 h-4" />
+                </div>
+                <div className="text-left overflow-hidden">
+                  <span className="block text-[9px] uppercase tracking-wider text-text-muted group-hover:text-white/70 transition-colors">Consultas Generales</span>
+                  <span className="font-serif text-sm md:text-base text-white/90 group-hover:text-white transition-colors truncate block">info@themaravillosostenors.es</span>
+                </div>
               </motion.a>
             </div>
+
+          </div>
+
+          {/* Social Links Separator */}
+          <div className="flex items-center gap-4 max-w-[200px] mx-auto mb-8 opacity-30">
+            <div className="h-[1px] bg-white flex-1"></div>
+            <span className="text-[10px] uppercase tracking-widest text-white">Síguenos</span>
+            <div className="h-[1px] bg-white flex-1"></div>
           </div>
 
           <div className="flex justify-center items-center gap-6">
             {socialLinks.map((social) => (
               <a
                 key={social.name}
-                className="size-14 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:border-neon/50 hover:bg-white/5 hover:shadow-[0_0_20px_rgba(75,92,160,0.3)] transition-all duration-500 group"
+                className="size-12 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:border-neon/50 hover:bg-white/5 hover:shadow-[0_0_20px_rgba(75,92,160,0.3)] transition-all duration-500 group"
                 href={social.href}
                 aria-label={social.name}
               >
