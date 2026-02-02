@@ -128,19 +128,18 @@ const Contact: React.FC = () => {
               </div>
 
               {/* Email Button */}
-              {/* Email Button */}
               <motion.a
                 href="mailto:info@themaravillosostenors.es"
-                className="group flex items-center gap-2 md:gap-3 p-3 md:p-4 bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 rounded-2xl transition-all duration-300"
+                className="group flex items-center gap-1.5 md:gap-3 p-3 md:p-4 bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 rounded-2xl transition-all duration-300"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <div className="flex-shrink-0 size-8 md:size-10 rounded-full bg-white/5 text-text-muted flex items-center justify-center group-hover:text-white transition-colors">
                   <MailIcon className="w-3 h-3 md:w-4 md:h-4" />
                 </div>
-                <div className="flex-1 text-center md:pr-10 overflow-hidden px-1">
+                <div className="flex-1 text-center md:pr-10 overflow-hidden px-0.5">
                   <span className="block text-[8px] md:text-[9px] uppercase tracking-wider text-text-muted group-hover:text-white/70 transition-colors truncate">{t('contact.generalInquiriesLabel')}</span>
-                  <span className="font-serif text-xs md:text-base text-white/90 group-hover:text-white transition-colors break-all block">info@themaravillosostenors.es</span>
+                  <span className="font-serif text-[10px] sm:text-xs md:text-base text-white/90 group-hover:text-white transition-colors whitespace-nowrap block">info@themaravillosostenors.es</span>
                 </div>
               </motion.a>
             </div>
