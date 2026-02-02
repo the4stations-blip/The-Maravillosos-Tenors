@@ -65,6 +65,13 @@ const Contact: React.FC = () => {
 
           <div className="flex flex-col gap-4 max-w-2xl mx-auto mb-16 w-full">
 
+            {/* Booking Label */}
+            <div className="text-center mb-4">
+              <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-neon font-bold">
+                {t('contact.bookingLabel')}
+              </span>
+            </div>
+
             {/* Primary Phone - Hero Action */}
             <div className="group relative flex items-center justify-between p-1 bg-gradient-to-r from-neon/20 to-neon/5 rounded-full border border-neon/50 hover:border-neon transition-all duration-300 shadow-[0_0_20px_rgba(75,92,160,0.15)] hover:shadow-[0_0_30px_rgba(75,92,160,0.3)] w-full overflow-hidden">
               <div className="absolute inset-0 bg-neon/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
@@ -79,7 +86,7 @@ const Contact: React.FC = () => {
                   <PhoneIcon className="w-4 h-4 md:w-5 md:h-5" />
                 </div>
                 <div className="flex-1 text-center pr-2 md:pr-12 min-w-0">
-                  <span className="block text-[8px] md:text-[10px] uppercase tracking-widest text-neon font-bold mb-0.5 truncate">{t('contact.bookingLabel')}</span>
+                  {/* Label moved outside */}
                   <span className="font-serif text-lg md:text-2xl text-white leading-none pb-0.5 whitespace-nowrap">{phones.primary.number}</span>
                 </div>
               </motion.a>
