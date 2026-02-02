@@ -63,7 +63,7 @@ const Contact: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex flex-col gap-4 max-w-lg mx-auto mb-16 w-full">
+          <div className="flex flex-col gap-4 max-w-2xl mx-auto mb-16 w-full">
 
             {/* Primary Phone - Hero Action */}
             <motion.a
