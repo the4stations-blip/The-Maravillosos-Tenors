@@ -2,7 +2,7 @@
 import React from 'react';
 import { useLanguage } from './LanguageContext';
 import { motion } from 'framer-motion';
-import { MailIcon, TouchAppIcon } from './Icons';
+import { MailIcon, TouchAppIcon, PhoneIcon } from './Icons';
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();
@@ -37,6 +37,17 @@ const Contact: React.FC = () => {
     }
   ];
 
+  const phones = {
+    primary: {
+      number: "+34 659 990 693",
+      clean: "+34659990693"
+    },
+    secondary: {
+      number: "+34 696 034 143",
+      clean: "+34696034143"
+    }
+  };
+
   return (
     <section className="relative py-32 bg-dark flex items-center justify-center overflow-hidden" id="contact">
       <div className="container max-w-[900px] mx-auto px-6 relative z-10">
@@ -49,42 +60,65 @@ const Contact: React.FC = () => {
             {t('contact.desc')}
           </p>
 
-          <div className="group relative inline-block mb-16">
-            <motion.a
-              href="mailto:info@themaravillosostenors.es"
-              className="relative block font-serif text-[clamp(12px,4vw,2rem)] sm:text-2xl md:text-3xl lg:text-4xl text-white/90 transition-colors duration-500 hover:text-white whitespace-nowrap"
-              whileHover="hover"
-            >
-              <motion.span
-                variants={{
-                  hover: { y: -5, textShadow: "0 0 20px rgba(75, 92, 160, 0.8)" }
-                }}
-                className="inline-block"
+          <div className="flex flex-col items-center gap-10 mb-16">
+            {/* Teléfonos with Hierarchy */}
+            <div className="flex flex-col items-center gap-6 w-full">
+              {/* Primary Phone */}
+              <motion.a
+                href={`tel:${phones.primary.clean}`}
+                className="group relative flex items-center gap-5 px-8 py-5 bg-white/5 hover:bg-white/10 border border-neon/30 hover:border-neon rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(75,92,160,0.1)] hover:shadow-[0_0_30px_rgba(75,92,160,0.4)] w-full md:w-auto min-w-[320px] justify-center cursor-pointer"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                info@themaravillosostenors.es
-              </motion.span>
+                <div className="p-3 bg-neon/10 rounded-full text-neon group-hover:bg-neon group-hover:text-black transition-all duration-300">
+                  <PhoneIcon className="w-6 h-6" />
+                </div>
+                <div className="flex flex-col items-start">
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-text-muted group-hover:text-neon transition-colors font-bold mb-1">Booking & Management</span>
+                  <span className="text-xl md:text-2xl font-serif text-white tracking-wide group-hover:text-white transition-colors">{phones.primary.number}</span>
+                </div>
+                <div className="absolute right-6 opacity-0 group-hover:opacity-100 transition-all transform group-hover:translate-x-1 text-neon">
+                  <TouchAppIcon className="w-5 h-5" />
+                </div>
+              </motion.a>
 
-              <motion.div
-                className="absolute -bottom-2 left-0 h-[1px] bg-neon"
-                initial={{ width: 0 }}
-                variants={{
-                  hover: { width: '100%' }
-                }}
-                transition={{ duration: 0.4, ease: "circOut" }}
-              />
-            </motion.a>
+              {/* Secondary Phone */}
+              <motion.a
+                href={`tel:${phones.secondary.clean}`}
+                className="group flex items-center gap-3 px-6 py-2 text-white/40 hover:text-white transition-colors"
+                whileHover={{ x: 2 }}
+              >
+                <PhoneIcon className="w-4 h-4" />
+                <span className="text-sm tracking-wider font-light">{phones.secondary.number}</span>
+              </motion.a>
+            </div>
 
-            <motion.a
-              href="mailto:info@themaravillosostenors.es"
-              initial={{ opacity: 1 }}
-              whileHover={{ opacity: 1, scale: 1.05 }}
-              className="mt-6 flex items-center justify-center gap-2 text-text-muted text-[10px] md:text-xs tracking-[0.2em] font-bold uppercase cursor-pointer hover:text-white transition-colors"
-            >
-              <TouchAppIcon className="w-4 h-4 animate-pulse" />
-              <span>{t('contact.clickAction')}</span>
-            </motion.a>
+            <div className="w-32 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
 
-            {/* Old hover hint removed in favor of permanent subtitle */}
+            <div className="group relative inline-block">
+              <motion.a
+                href="mailto:info@themaravillosostenors.es"
+                className="relative block font-serif text-[clamp(12px,4vw,2rem)] sm:text-2xl md:text-3xl lg:text-4xl text-white/90 transition-colors duration-500 hover:text-white whitespace-nowrap"
+                whileHover="hover"
+              >
+                <motion.span
+                  variants={{
+                    hover: { y: -5, textShadow: "0 0 20px rgba(75, 92, 160, 0.8)" }
+                  }}
+                  className="inline-block"
+                >
+                  info@themaravillosostenors.es
+                </motion.span>
+                <motion.div
+                  className="absolute -bottom-2 left-0 h-[1px] bg-neon"
+                  initial={{ width: 0 }}
+                  variants={{
+                    hover: { width: '100%' }
+                  }}
+                  transition={{ duration: 0.4, ease: "circOut" }}
+                />
+              </motion.a>
+            </div>
           </div>
 
           <div className="flex justify-center items-center gap-6">
