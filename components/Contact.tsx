@@ -100,19 +100,33 @@ const Contact: React.FC = () => {
 
             <div className="flex flex-col gap-4">
               {/* Secondary Phone */}
-              <motion.a
-                href={`tel:${phones.secondary.clean}`}
-                className="group flex items-center gap-3 p-4 bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 rounded-2xl transition-all duration-300"
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <div className="flex-shrink-0 size-10 rounded-full bg-white/5 text-text-muted flex items-center justify-center group-hover:text-white transition-colors">
-                  <PhoneIcon className="w-4 h-4" />
-                </div>
-                <div className="flex-1 text-center pr-10">
-                  <span className="font-serif text-lg text-white/90 group-hover:text-white transition-colors">{phones.secondary.number}</span>
-                </div>
-              </motion.a>
+              {/* Secondary Phone */}
+              <div className="group flex items-center justify-between p-1 bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/20 rounded-2xl transition-all duration-300">
+                <motion.a
+                  href={`tel:${phones.secondary.clean}`}
+                  className="flex-1 flex items-center gap-3 p-3 min-w-0"
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <div className="flex-shrink-0 size-10 rounded-full bg-white/5 text-text-muted flex items-center justify-center group-hover:text-white transition-colors">
+                    <PhoneIcon className="w-4 h-4" />
+                  </div>
+                  <div className="flex-1 text-center pr-10">
+                    <span className="font-serif text-lg text-white/90 group-hover:text-white transition-colors">{phones.secondary.number}</span>
+                  </div>
+                </motion.a>
+
+                <motion.a
+                  href={`https://wa.me/${phones.secondary.clean.replace('+', '')}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-shrink-0 mr-1 size-10 rounded-full bg-white/5 hover:bg-[#25D366] text-white/50 hover:text-white flex items-center justify-center transition-all duration-300"
+                  whileHover={{ scale: 1.1, rotate: 10 }}
+                  whileTap={{ scale: 0.9 }}
+                  aria-label="Chat on WhatsApp"
+                >
+                  <WhatsAppIcon className="w-5 h-5" />
+                </motion.a>
+              </div>
 
               {/* Email Button */}
               <motion.a
