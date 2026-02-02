@@ -79,7 +79,7 @@ const Contact: React.FC = () => {
                   <PhoneIcon className="w-5 h-5" />
                 </div>
                 <div className="flex-1 text-center pr-12">
-                  <span className="block text-[10px] uppercase tracking-widest text-neon font-bold mb-0.5">Booking & Management</span>
+                  <span className="block text-[10px] uppercase tracking-widest text-neon font-bold mb-0.5">{t('contact.bookingLabel')}</span>
                   <span className="font-serif text-xl md:text-2xl text-white leading-none pb-0.5 whitespace-nowrap">{phones.primary.number}</span>
                 </div>
               </motion.a>
@@ -110,7 +110,6 @@ const Contact: React.FC = () => {
                   <PhoneIcon className="w-4 h-4" />
                 </div>
                 <div className="flex-1 text-center pr-10">
-                  <span className="block text-[9px] uppercase tracking-wider text-text-muted group-hover:text-white/70 transition-colors">Línea Alternativa</span>
                   <span className="font-serif text-lg text-white/90 group-hover:text-white transition-colors">{phones.secondary.number}</span>
                 </div>
               </motion.a>
@@ -126,7 +125,7 @@ const Contact: React.FC = () => {
                   <MailIcon className="w-4 h-4" />
                 </div>
                 <div className="flex-1 text-center pr-10 overflow-hidden">
-                  <span className="block text-[9px] uppercase tracking-wider text-text-muted group-hover:text-white/70 transition-colors">Consultas Generales</span>
+                  <span className="block text-[9px] uppercase tracking-wider text-text-muted group-hover:text-white/70 transition-colors">{t('contact.generalInquiriesLabel')}</span>
                   <span className="font-serif text-sm md:text-base text-white/90 group-hover:text-white transition-colors truncate block">info@themaravillosostenors.es</span>
                 </div>
               </motion.a>
@@ -136,7 +135,7 @@ const Contact: React.FC = () => {
           {/* Social Links Separator */}
           <div className="flex items-center gap-4 max-w-[200px] mx-auto mb-8 opacity-30">
             <div className="h-[1px] bg-white flex-1"></div>
-            <span className="text-[10px] uppercase tracking-widest text-white">Síguenos</span>
+            <span className="text-[10px] uppercase tracking-widest text-white">{t('contact.followUs')}</span>
             <div className="h-[1px] bg-white flex-1"></div>
           </div>
 

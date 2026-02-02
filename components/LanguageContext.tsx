@@ -30,7 +30,13 @@ const translations = {
       desc: "Una colección curada de nuestras actuaciones más impresionantes, capturando la emoción pura de la ópera.",
       gala: "Gala en Vivo",
       bts: "Tras las cámaras",
-      masterclass: "Clase Magistral"
+      masterclass: "Clase Magistral",
+      instagramReel: "Instagram Reel",
+      reel: "Reel",
+      watchInstagram: "Ver en Instagram"
+    },
+    modal: {
+      close: "Cerrar"
     },
     shows: {
       title: "Nuestros",
@@ -38,6 +44,7 @@ const translations = {
       select: "Selecciona una experiencia",
       share: "Compartir",
       shared: "¡Copiado!",
+      watchYouTube: "Ver en YouTube",
       sinfonico: {
         label: "Sinfónico",
         title: "",
@@ -96,7 +103,11 @@ const translations = {
       title: "Consultas y Reservas",
       desc: "Para eventos distinguidos que requieran una atmósfera de elegancia inigualable.",
       copy: "Click para contactar",
-      clickAction: "PULSA EL CORREO PARA CONTACTAR"
+      clickAction: "PULSA EL CORREO PARA CONTACTAR",
+      bookingLabel: "Booking & Management",
+      altPhoneLabel: "Línea Alternativa",
+      generalInquiriesLabel: "Consultas Generales",
+      followUs: "Síguenos"
     },
     footer: {
       rights: "© 2024 The Maravillosos Tenors. Todos los derechos reservados."
@@ -123,7 +134,13 @@ const translations = {
       desc: "A curated collection of our most breathtaking performances, capturing the raw emotion of the opera.",
       gala: "Live Gala",
       bts: "Behind the scenes",
-      masterclass: "Masterclass"
+      masterclass: "Masterclass",
+      instagramReel: "Instagram Reel",
+      reel: "Reel",
+      watchInstagram: "Watch on Instagram"
+    },
+    modal: {
+      close: "Close"
     },
     shows: {
       title: "Our",
@@ -131,6 +148,7 @@ const translations = {
       select: "Select an experience",
       share: "Share",
       shared: "Copied!",
+      watchYouTube: "Watch on YouTube",
       sinfonico: {
         label: "Sinfónico",
         title: "",
@@ -189,7 +207,11 @@ const translations = {
       title: "Inquiries & Bookings",
       desc: "For distinguished events requiring an atmosphere of unparalleled elegance.",
       copy: "Click to contact",
-      clickAction: "TAP EMAIL TO CONTACT"
+      clickAction: "TAP EMAIL TO CONTACT",
+      bookingLabel: "Booking & Management",
+      altPhoneLabel: "Alternative Line",
+      generalInquiriesLabel: "General Inquiries",
+      followUs: "Follow Us"
     },
     footer: {
       rights: "© 2024 The Maravillosos Tenors. All Rights Reserved."
