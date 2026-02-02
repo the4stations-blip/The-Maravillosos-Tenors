@@ -41,10 +41,10 @@ const Tenors: React.FC = () => {
       image: "/tenor-ivan.jpg"
     },
     {
-      name: "Matteo",
-      voice: t('tenors.profiles.matteo.voice'),
-      bio: t('tenors.profiles.matteo.bio'),
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDr_Zw8ybUk7StU43bmWkcCrlVktL2wxUSK6sA-mhlYhmHvVDJ3ptz_VnKPvRszXQxh_PoY0dfvsEDhPf0QAKirUTisgw1yQsVt5Nd7OdZUvbJVBtDrhs_rlOQgCph0A5d5RrhyBNbxCEXloBBYKRmMcnQh5HvNDMWJPQt_kmtLoM0fYUqiXPIQEMgN6McjrZc7JStZIrpOwexC6zC7SOFH4JFW2CO1siaSvPRHH1Awq0bXEHojYea6xNL4ouZx0pNngxFV7p3YwyW2"
+      name: "Alberto Echevarría",
+      voice: t('tenors.profiles.alberto.voice'),
+      bio: t('tenors.profiles.alberto.bio'),
+      image: "/tenor-alberto.jpg"
     },
     {
       name: "Luca",
