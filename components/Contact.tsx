@@ -89,7 +89,7 @@ const Contact: React.FC = () => {
                 href={`https://wa.me/${phones.primary.clean.replace('+', '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-shrink-0 mr-1 size-10 rounded-full bg-white/5 hover:bg-[#25D366] text-white/50 hover:text-white flex items-center justify-center transition-all duration-300 z-10"
+                className="flex-shrink-0 mr-1 size-10 rounded-full bg-white/10 hover:bg-[#25D366] text-white/50 hover:text-white flex items-center justify-center transition-all duration-300 z-10"
                 whileHover={{ scale: 1.1, rotate: 10 }}
                 whileTap={{ scale: 0.9 }}
                 aria-label="Chat on WhatsApp"
@@ -119,7 +119,7 @@ const Contact: React.FC = () => {
                   href={`https://wa.me/${phones.secondary.clean.replace('+', '')}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-shrink-0 mr-1 size-10 rounded-full bg-white/5 hover:bg-[#25D366] text-white/50 hover:text-white flex items-center justify-center transition-all duration-300"
+                  className="flex-shrink-0 mr-1 size-10 rounded-full bg-white/10 hover:bg-[#25D366] text-white/50 hover:text-white flex items-center justify-center transition-all duration-300"
                   whileHover={{ scale: 1.1, rotate: 10 }}
                   whileTap={{ scale: 0.9 }}
                   aria-label="Chat on WhatsApp"
