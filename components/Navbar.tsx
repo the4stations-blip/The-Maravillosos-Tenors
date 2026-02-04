@@ -73,7 +73,8 @@ const Navbar: React.FC = () => {
               variants={{
                 hover: { tracking: '0.25em', opacity: 1 }
               }}
-              className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-500 opacity-90"
+              className="text-xs md:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-500 opacity-90 notranslate"
+              translate="no"
             >
               The Maravillosos Tenors
             </motion.span>
@@ -120,13 +121,15 @@ const Navbar: React.FC = () => {
               className="relative group cursor-pointer select-none"
               onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
             >
-              <div className="relative flex items-center bg-white/5 border border-white/10 rounded-full p-[3px] md:p-[4px] w-[70px] md:w-[80px] h-[28px] md:h-[32px] backdrop-blur-md overflow-hidden">
+              <div className="relative bg-white/5 border border-white/10 rounded-full p-[3px] md:p-[4px] w-[70px] md:w-[80px] h-[28px] md:h-[32px] backdrop-blur-md overflow-hidden">
+                {/* Sliding indicator */}
                 <div
-                  className={`absolute top-[3px] md:top-[4px] bottom-[3px] md:bottom-[4px] left-[3px] md:left-[4px] w-[30px] md:w-[34px] bg-neon rounded-full transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${lang === 'en' ? 'translate-x-[34px] md:translate-x-[38px]' : 'translate-x-[0px]'}`}
+                  className={`absolute top-[3px] md:top-[4px] bottom-[3px] md:bottom-[4px] w-[30px] md:w-[34px] bg-neon rounded-full transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] ${lang === 'en' ? 'left-[calc(50%+1px)] md:left-[calc(50%+2px)]' : 'left-[3px] md:left-[4px]'}`}
                 ></div>
-                <div className="relative z-10 w-full flex items-center justify-around h-full">
-                  <span className={`text-[8px] md:text-[10px] font-bold tracking-widest transition-colors duration-300 flex-1 text-center ${lang === 'es' ? 'text-white' : 'text-white/30'}`}>ES</span>
-                  <span className={`text-[8px] md:text-[10px] font-bold tracking-widest transition-colors duration-300 flex-1 text-center ${lang === 'en' ? 'text-white' : 'text-white/30'}`}>EN</span>
+                {/* Language labels - using grid for consistent positioning */}
+                <div className="relative z-10 w-full h-full grid grid-cols-2">
+                  <span className={`flex items-center justify-center text-[9px] md:text-[10px] font-bold tracking-wider transition-colors duration-300 ${lang === 'es' ? 'text-white' : 'text-white/40'}`}>ES</span>
+                  <span className={`flex items-center justify-center text-[9px] md:text-[10px] font-bold tracking-wider transition-colors duration-300 ${lang === 'en' ? 'text-white' : 'text-white/40'}`}>EN</span>
                 </div>
               </div>
             </div>
