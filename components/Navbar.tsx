@@ -118,8 +118,9 @@ const Navbar: React.FC = () => {
             {/* Language Selector: ES Left, EN Right */}
             <div
               aria-label="Language Selector"
-              className="relative group cursor-pointer select-none"
+              className="relative group cursor-pointer select-none notranslate"
               onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
+              translate="no"
             >
               <div className="relative bg-white/5 border border-white/10 rounded-full p-[3px] md:p-[4px] w-[70px] md:w-[80px] h-[28px] md:h-[32px] backdrop-blur-md overflow-hidden">
                 {/* Sliding indicator */}
@@ -128,8 +129,8 @@ const Navbar: React.FC = () => {
                 ></div>
                 {/* Language labels - using grid for consistent positioning */}
                 <div className="relative z-10 w-full h-full grid grid-cols-2">
-                  <span className={`flex items-center justify-center text-[9px] md:text-[10px] font-bold tracking-wider transition-colors duration-300 ${lang === 'es' ? 'text-white' : 'text-white/40'}`}>ES</span>
-                  <span className={`flex items-center justify-center text-[9px] md:text-[10px] font-bold tracking-wider transition-colors duration-300 ${lang === 'en' ? 'text-white' : 'text-white/40'}`}>EN</span>
+                  <span translate="no" className={`flex items-center justify-center text-[9px] md:text-[10px] font-bold tracking-wider transition-colors duration-300 ${lang === 'es' ? 'text-white' : 'text-white/40'}`}>ES</span>
+                  <span translate="no" className={`flex items-center justify-center text-[9px] md:text-[10px] font-bold tracking-wider transition-colors duration-300 ${lang === 'en' ? 'text-white' : 'text-white/40'}`}>EN</span>
                 </div>
               </div>
             </div>
