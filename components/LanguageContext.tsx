@@ -233,6 +233,19 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     return browserLang.startsWith('en') ? 'en' : 'es';
   });
 
+  // Update HTML lang attribute and prevent browser auto-translation
+  useEffect(() => {
+    const htmlElement = document.documentElement;
+
+    // Set the language attribute on the HTML element
+    htmlElement.setAttribute('lang', lang);
+
+    // Add notranslate class to prevent browser auto-translation
+    // This tells Chrome/Edge/etc. not to translate the page content
+    htmlElement.classList.add('notranslate');
+    htmlElement.setAttribute('translate', 'no');
+  }, [lang]);
+
   const t = (path: string) => {
     return path.split('.').reduce((obj: any, key) => obj?.[key], translations[lang]);
   };
