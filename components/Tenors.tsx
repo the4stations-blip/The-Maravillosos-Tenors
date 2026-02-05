@@ -47,16 +47,16 @@ const Tenors: React.FC = () => {
       image: "/tenor-alberto.png"
     },
     {
+      name: "Daniel Jiménez",
+      voice: t('tenors.profiles.daniel.voice'),
+      bio: t('tenors.profiles.daniel.bio'),
+      image: "/tenor-daniel.jpg"
+    },
+    {
       name: "Ángel Martínez",
       voice: t('tenors.profiles.angel.voice'),
       bio: t('tenors.profiles.angel.bio'),
       image: "/tenor-angel.jpg"
-    },
-    {
-      name: "Giovanni",
-      voice: t('tenors.profiles.giovanni.voice'),
-      bio: t('tenors.profiles.giovanni.bio'),
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAXHv0zHRe78z-0NPtJC-OVIO9vQhzlbeQV4Gqi4b250uYQ89-yhW77UWRomdDWYdwIASTNPYrGl3SsxlerPnV-YyNOYwRrLjVWnsoQM_3lVnDze5f8T9wFhIdQjPpTeGdUqkble6bJsQuYs8Yi5lcyjC3LWwy26dCI2aFvt8gmH8shCRzEhYyWuIBaz91xUvZls-dgxgGeF7u8GPn5oHSeKFZjI-YsgdU5YHyTQcouHHbrMyNcCHa7YTdc0QNDfR2U22mJr11urGqn"
     }
   ];
 
