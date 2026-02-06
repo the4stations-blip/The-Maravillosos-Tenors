@@ -38,7 +38,7 @@ const Tenors: React.FC = () => {
       name: "Iván Nieto-Balboa",
       voice: t('tenors.profiles.ivan.voice'),
       bio: t('tenors.profiles.ivan.bio'),
-      image: "/tenor-ivan.jpg"
+      image: "/tenor-ivan.png"
     },
     {
       name: "Alberto Echevarría",
