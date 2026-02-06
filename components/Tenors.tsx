@@ -56,7 +56,7 @@ const Tenors: React.FC = () => {
       name: "Ángel Martínez",
       voice: t('tenors.profiles.angel.voice'),
       bio: t('tenors.profiles.angel.bio'),
-      image: "/tenor-angel.jpg"
+      image: "/tenor-angel.png"
     }
   ];
 
