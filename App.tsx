@@ -11,6 +11,8 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import LogoMarquee from './components/LogoMarquee';
+import { HelmetProvider } from 'react-helmet-async';
+import SEO from './components/SEO';
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -54,20 +56,23 @@ const App: React.FC = () => {
     }
   }, []);
   return (
-    <LanguageProvider>
-      <div className="min-h-screen bg-dark">
-        <Navbar />
-        <Hero />
-        <Marquee />
-        <NuestrosShows />
-        <SinfoniaVisual />
-        <Tenors />
-        <LogoMarquee />
-        <Contact />
-        <Footer />
-        <ScrollToTop />
-      </div>
-    </LanguageProvider>
+    <HelmetProvider>
+      <LanguageProvider>
+        <SEO />
+        <div className="min-h-screen bg-dark">
+          <Navbar />
+          <Hero />
+          <Marquee />
+          <NuestrosShows />
+          <SinfoniaVisual />
+          <Tenors />
+          <LogoMarquee />
+          <Contact />
+          <Footer />
+          <ScrollToTop />
+        </div>
+      </LanguageProvider>
+    </HelmetProvider>
   );
 };
 

@@ -71,6 +71,8 @@ const Hero: React.FC = () => {
           alt="Cinematic Background"
           className="w-full h-full object-cover object-top brightness-[1.2] contrast-[1.1]"
           src="/hero-image.jpg"
+          fetchPriority="high"
+          loading="eager"
         />
       </motion.div>
 

@@ -1,5 +1,3 @@
-# robots.txt for The Maravillosos Tenors
 User-agent: *
 Allow: /
-
 Sitemap: https://themaravillosostenors.es/sitemap.xml

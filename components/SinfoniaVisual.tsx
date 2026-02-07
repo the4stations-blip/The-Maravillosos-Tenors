@@ -94,6 +94,7 @@ const SinfoniaVisual: React.FC = () => {
                       src={getYouTubeThumbnail(item.id)}
                       alt={item.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${item.id}/hqdefault.jpg`;
                       }}
@@ -103,6 +104,7 @@ const SinfoniaVisual: React.FC = () => {
                       src={item.thumbnail}
                       alt={item.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      loading="lazy"
                     />
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-purple-900/60 via-pink-800/40 to-orange-700/30 flex items-center justify-center">

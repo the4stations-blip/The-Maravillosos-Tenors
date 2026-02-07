@@ -113,6 +113,7 @@ const Tenors: React.FC = () => {
                     alt={artist.name}
                     className="w-full h-full object-cover object-top transition-all duration-1000 ease-out md:group-hover:scale-105"
                     src={artist.image}
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-90 transition-opacity duration-700"></div>
                   <div className="absolute inset-0 noise-bg opacity-10 mix-blend-overlay"></div>
@@ -172,6 +173,7 @@ const Tenors: React.FC = () => {
                 src={selectedArtist.image}
                 alt={selectedArtist.name}
                 className="w-full h-full object-cover object-top"
+                loading="eager"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-dark-surface via-transparent to-transparent md:bg-gradient-to-r"></div>
             </div>
