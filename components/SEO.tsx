@@ -49,13 +49,13 @@ const SEO: React.FC<SEOProps> = ({
             {
                 "@type": "Person",
                 "name": "Alberto Echevarría",
-                "jobTitle": lang === 'es' ? "Tenor Lírico Ligero" : "Light Lyric Tenor",
+                "jobTitle": lang === 'es' ? "Tenor Ligero" : "Light Lyric Tenor",
                 "image": "https://themaravillosostenors.es/tenor-alberto.png"
             },
             {
                 "@type": "Person",
-                "name": "Daniel Jiménez",
-                "jobTitle": lang === 'es' ? "Tenor Lírico Ligero" : "Light Lyric Tenor",
+                "name": "Daniel Menez",
+                "jobTitle": lang === 'es' ? "Tenor Ligero" : "Light Lyric Tenor",
                 "image": "https://themaravillosostenors.es/tenor-daniel.jpg"
             },
             {
