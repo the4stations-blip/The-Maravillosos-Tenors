@@ -17,7 +17,7 @@ const translations = {
       contact: "Contacto"
     },
     hero: {
-      tagline: "Experiencia Operística de Vanguardia",
+      tagline: "Grupo Crossover de Referencia",
       titleTop: "Voces de",
       titleBottom: "Elegancia"
     },
@@ -87,7 +87,7 @@ const translations = {
       tagline: "Descubre a los artistas",
       profiles: {
         ivan: {
-          voice: "El Lírico",
+          voice: "Tenor Lírico",
           bio: "Su formación vocal comienza bajo la guía de la reconocida profesora de canto María Luisa Castellanos, con quien desarrolló las bases del canto lírico y musical. Posteriormente, continuó su perfeccionamiento técnico y estilístico junto al reconocido tenor Júan Lomba, con quién profundizó en el repertorio operístico, siendo éste una gran parte importante de su carrera profesional. Terminó su formación vocal ampliando su técnica orientada al teatro musical con el maestro José Masegosa.\n\nHa participado en numerosos montajes tanto líricos como musicales destacando su participación en óperas como La Traviata, El Barbero de Sevilla, La boheme, Carmen… Su paso por el género de la zarzuela nos deja títulos en el roll de protagonista como El Barberillos de Lavapiés, Caballero de Gracia, La Gran Vía, La Revoltosa, El Barbero de Sevilla, Bohemios, La Verbena de la Paloma…\n\nEntre sus trabajos figuran también su participación en montajes como Edipo Rey en el Festival de Teatro Clásico de Mérida o su participación en la obra de teatro de Algunos Hombres Buenos en el papel de Lauden Dawney, así como diferentes roles en el montaje teatral Noche de Guerra en el Museo del Prado, dirigida por Richard Salvat.\n\nEn el teatro musical ha participados en numerosos montajes entre los que destacan West Side Story, El Hombre de La Mancha, Peter Pan, La Magia de Broadway, Los Miserables… dirigidas por reconocidos directores como Gustavo Tambascio, Emilio Sagi, Jaime Chavarri o Cesar Belda.\n\nEn la actualidad forma parte del grupo The Maravillosos Tenors en el que ya ha realizado varias giras internacionales y del que forma parte por más de una década."
         },
         alberto: {
@@ -127,7 +127,7 @@ const translations = {
       contact: "Contact"
     },
     hero: {
-      tagline: "Avant-Garde Operatic Experience",
+      tagline: "Leading Crossover Group",
       titleTop: "Voices of",
       titleBottom: "Elegance"
     },
