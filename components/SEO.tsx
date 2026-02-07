@@ -55,7 +55,7 @@ const SEO: React.FC<SEOProps> = ({
             {
                 "@type": "Person",
                 "name": "Daniel Menez",
-                "jobTitle": lang === 'es' ? "Tenor Ligero" : "Light Lyric Tenor",
+                "jobTitle": lang === 'es' ? "Tenor Lírico Ligero" : "Light Lyric Tenor",
                 "image": "https://themaravillosostenors.es/tenor-daniel.jpg"
             },
             {
