@@ -17,12 +17,12 @@ const SinfoniaVisual: React.FC = () => {
 
   // Intercalando Reel - Video - Reel - Video...
   const mediaItems: MediaItem[] = [
-    { type: 'youtube', id: 'irF2lHkQAAM', title: 'TMT - SHOWREEL INOLVIDABLE SHOW' },
-    { type: 'instagram', id: 'DH9DtZytr64', title: 'A mi manera', thumbnail: '/reel-1.jpg' },
-    { type: 'instagram', id: 'DHq48h3t3PM', title: 'Música que se siente y se baila', thumbnail: '/pasion-latina-thumb.jpg' },
+    { type: 'youtube', id: 'irF2lHkQAAM', title: t('repertoire.items.showreel') },
+    { type: 'instagram', id: 'DH9DtZytr64', title: t('repertoire.items.myWay'), thumbnail: '/reel-1.jpg' },
+    { type: 'instagram', id: 'DHq48h3t3PM', title: t('repertoire.items.musicFeel'), thumbnail: '/pasion-latina-thumb.jpg' },
 
-    { type: 'youtube', id: 'KqlXxnAjbcA', title: 'Live Performance 3' },
-    { type: 'instagram', id: 'DGabMKEtNBm', title: 'Cada nota, una historia🎶', thumbnail: '/reel-7.jpg' },
+    { type: 'youtube', id: 'KqlXxnAjbcA', title: t('repertoire.items.live3') },
+    { type: 'instagram', id: 'DGabMKEtNBm', title: t('repertoire.items.story'), thumbnail: '/reel-7.jpg' },
   ];
 
   const handleScroll = (dir: 'left' | 'right') => {

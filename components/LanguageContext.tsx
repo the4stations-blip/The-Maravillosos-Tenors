@@ -22,7 +22,14 @@ const translations = {
       titleBottom: "Elegancia"
     },
     marquee: {
-      // Keys for marquee are now mostly static or years
+      cities: [
+        "MÁLAGA", "MARSELLA", "ALMERÍA", "CANNES", "TOLEDO", "ROMA",
+        "MADRID", "FLORENCIA", "BARCELONA", "NÁPOLES", "SANTANDER", "ATENAS",
+        "VALENCIA", "NICOSIA", "BILBAO", "LA VALETA", "LONDRES", "DUBLÍN",
+        "COPENHAGUE", "HELSINKI", "ESTOCOLMO", "TALLIN", "SAN PETERSBURGO",
+        "EL CAIRO", "MASCATE", "DUBAI", "ABU DHABI", "MUMBAI", "TOKIO",
+        "PEKÍN", "SHANGAI", "CIUDAD DEL CABO", "TÚNEZ", "ARUBA", "BRISBANE", "AUCKLAND"
+      ]
     },
     repertoire: {
       title: "Sinfonía",
@@ -33,7 +40,14 @@ const translations = {
       masterclass: "Clase Magistral",
       instagramReel: "Instagram Reel",
       reel: "Reel",
-      watchInstagram: "Ver en Instagram"
+      watchInstagram: "Ver en Instagram",
+      items: {
+        showreel: "TMT - SHOWREEL SHOW INOLVIDABLE",
+        myWay: "A mi manera",
+        musicFeel: "Música que se siente y se baila",
+        live3: "Actuación en Vivo 3",
+        story: "Cada nota, una historia 🎶"
+      }
     },
     modal: {
       close: "Cerrar"
@@ -132,7 +146,14 @@ const translations = {
       titleBottom: "Elegance"
     },
     marquee: {
-      // Keys for marquee are now mostly static or years
+      cities: [
+        "MALAGA", "MARSEILLE", "ALMERIA", "CANNES", "TOLEDO", "ROME",
+        "MADRID", "FLORENCE", "BARCELONA", "NAPLES", "SANTANDER", "ATHENS",
+        "VALENCIA", "NICOSIA", "BILBAO", "VALLETTA", "LONDON", "DUBLIN",
+        "COPENHAGEN", "HELSINKI", "STOCKHOLM", "TALLINN", "ST PETERSBURG",
+        "CAIRO", "MUSCAT", "DUBAI", "ABU DHABI", "MUMBAI", "TOKYO",
+        "BEIJING", "SHANGHAI", "CAPE TOWN", "TUNIS", "ARUBA", "BRISBANE", "AUCKLAND"
+      ]
     },
     repertoire: {
       title: "Visual",
@@ -143,7 +164,14 @@ const translations = {
       masterclass: "Masterclass",
       instagramReel: "Instagram Reel",
       reel: "Reel",
-      watchInstagram: "Watch on Instagram"
+      watchInstagram: "Watch on Instagram",
+      items: {
+        showreel: "TMT - UNFORGETTABLE SHOW SHOWREEL",
+        myWay: "My Way",
+        musicFeel: "Music to Feel and Dance",
+        live3: "Live Performance 3",
+        story: "Every Note, a Story 🎶"
+      }
     },
     modal: {
       close: "Close"

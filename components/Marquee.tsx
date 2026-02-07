@@ -1,15 +1,10 @@
 
 import React from 'react';
+import { useLanguage } from './LanguageContext';
 
 const Marquee: React.FC = () => {
-  const cities = [
-    "MALAGA", "MARSELLA", "ALMERIA", "CANNES", "TOLEDO", "ROMA",
-    "MADRID", "FLORENCIA", "BARCELONA", "NAPOLES", "SANTANDER", "ATENAS",
-    "VALENCIA", "NICOSIA", "BILBAO", "LA VALETA", "LONDRES", "DUBLIN",
-    "COPENHAGUE", "HELSINKI", "ESTOCOLMO", "TALLIN", "SAN PETERSBURGO",
-    "EL CAIRO", "MUSCAT", "DUBAI", "ABU DHABI", "MUMBAI", "TOKYO",
-    "BEIJING", "SHANGAI", "CAPE TOWN", "TUNEZ", "ARUBA", "BRISBANE", "AUCKLAND"
-  ];
+  const { t } = useLanguage();
+  const cities = t('marquee.cities') || [];
 
   // Duplicamos la lista para crear el efecto de bucle infinito
   const marqueeItems = [...cities, ...cities];
@@ -22,7 +17,7 @@ const Marquee: React.FC = () => {
 
       <div className="flex whitespace-nowrap animate-marquee-liquid w-max opacity-90 hover:opacity-100 transition-opacity duration-1000">
         <div className="flex items-center gap-12 md:gap-24 px-12">
-          {marqueeItems.map((city, idx) => (
+          {marqueeItems.map((city: string, idx: number) => (
             <div
               key={`${city}-${idx}`}
               className="flex items-center gap-12 md:gap-24"
