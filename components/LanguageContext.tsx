@@ -146,7 +146,7 @@ const translations = {
     },
     hero: {
       tagline: "Leading Crossover Group",
-      titleTop: "Voices of",
+      titleTop: "Voices with",
       titleBottom: "Elegance"
     },
     marquee: {
