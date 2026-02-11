@@ -18,7 +18,7 @@ const translations = {
     },
     hero: {
       tagline: "Grupo Crossover de Referencia",
-      titleTop: "Voces de",
+      titleTop: "Voces con",
       titleBottom: "Elegancia"
     },
     marquee: {
